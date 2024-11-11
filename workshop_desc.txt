@@ -64,7 +64,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
 
 [h2]ゲーム途中からの削除[/h2]
 
-問題あります。
+[b]問題あります。[/b]
 各アイテムは本来の物とは別IDとなっている為です。
 これは素材と作業台を作り分ける為の措置です。
 
