@@ -49,3 +49,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
 ## レシピ
 
 低位の装備は最初から習得していますが、高位(内部Lvが10以上)の装備は閃く必要があります。
+
+## ソース
+
+https://github.com/hirmiura/elin-yar-craft
