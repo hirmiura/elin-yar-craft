@@ -50,6 +50,16 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
 
 低位の装備は最初から習得していますが、高位(内部Lvが10以上)の装備は閃く必要があります。
 
+## ゲーム途中からの追加
+
+問題ありません。
+
+## ゲーム途中からの削除
+
+問題あります。  
+各アイテムは本来の物とは別IDとなっている為です。  
+これは素材と作業台を作り分ける為の措置です。
+
 ## ソース
 
 https://github.com/hirmiura/elin-yar-craft
