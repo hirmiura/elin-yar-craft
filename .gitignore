@@ -648,3 +648,6 @@ _Elona/
 _Lang_Chinese/
 Mod_Scratch/
 Mod_Slot/
+
+# Libreoffice lock file
+.~lock*
