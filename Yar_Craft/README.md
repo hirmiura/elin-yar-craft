@@ -60,6 +60,8 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
 各アイテムは本来の物とは別IDとなっている為です。  
 これは素材と作業台を作り分ける為の措置です。
 
+具体的には、作成したアイテムがジャンクに化けます(elonaでいう金塊みたいなもの)。
+
 ## ソース
 
 https://github.com/hirmiura/elin-yar-craft
