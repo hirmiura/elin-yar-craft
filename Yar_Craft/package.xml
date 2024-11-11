@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Meta>
+  <title>Yar Craft</title>
+  <id>yar_craft</id>
+  <author>Yararezon</author>
+  <loadPriority>100</loadPriority>
+  <version>0.23.20</version>
+  <description>装備を製作できるようにします。※動作にはEDEFWが必須です</description>
+</Meta>
