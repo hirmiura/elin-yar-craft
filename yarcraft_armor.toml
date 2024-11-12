@@ -223,3 +223,34 @@ recipe.components = "{variant}/3,texture,string,needle,+rune"
 filter.id         = "^boots_foreign$"
 filter.category   = "^foot$"
 recipe.components = "{variant}/2,texture/2,string,needle,+rune"
+
+##### 個別設定(背) #####
+["light cloak"]
+filter.name       = "^light cloak$"
+filter.category   = "^back$"
+recipe.components = "{variant},texture,string,needle,+rune"
+
+["wing"]
+filter.name       = "^wing$"
+filter.category   = "^back$"
+recipe.components = "{variant}/2,texture/2,string/2,needle/2,+rune"
+
+["cloak"]
+filter.name       = "^cloak$"
+filter.category   = "^back$"
+recipe.components = "{variant}/2,texture,string,needle,+rune"
+
+["battle cloak"]
+filter.name       = "^battle cloak$"
+filter.category   = "^back$"
+recipe.components = "{variant}/2,texture/2,string,needle,+rune"
+
+["armored cloak"]
+filter.name       = "^armored cloak$"
+filter.category   = "^back$"
+recipe.components = "{variant}/2,ingot,texture,string,needle,+rune"
+
+["feather"]
+filter.name       = "^feather$"
+filter.category   = "^back$"
+recipe.components = "{variant}/2,texture,string/2,needle/2,+rune"
