@@ -7,11 +7,34 @@
 このModの動作にはEDEFWが必須です。
 以下をサブスクライブしてください。
 
-https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
+[Elin Data Expanded Framework](https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460)
+
+## レシピ
+
+低位の装備は最初から習得していますが、高位(内部Lvが10以上)の装備は閃く必要があります。
+
+## ゲーム途中からの追加
+
+問題ありません。
+
+## ゲーム途中からの削除
+
+問題あります。  
+各アイテムは本来の物とは別IDとなっている為です。  
+これは素材と作業台を作り分ける為の措置です。
+
+具体的には、作成したアイテムがジャンクに化けます(elonaでいう金塊みたいなもの)。
+
+## 他Modとの競合
+
+アイテムデータを独自idで追加しているだけなので、無いはずなのですが……
+
+[KK With My Sister と併用するとフィートが取得できなくなる](https://github.com/hirmiura/elin-yar-craft/issues/2)現象が起きます。  
+[KK With My Sister](https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949)
 
 ## 製作できる装備
 
-現バージョンでは以下の装備が作成可能です。
+現バージョンでは以下の装備が製作できます。
 
 * 近接武器(金属/木/石)
   * 包丁
@@ -55,32 +78,9 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
   * 合金兜
   * 大兜
 
-## レシピ
-
-低位の装備は最初から習得していますが、高位(内部Lvが10以上)の装備は閃く必要があります。
-
-## ゲーム途中からの追加
-
-問題ありません。
-
-## ゲーム途中からの削除
-
-問題あります。  
-各アイテムは本来の物とは別IDとなっている為です。  
-これは素材と作業台を作り分ける為の措置です。
-
-具体的には、作成したアイテムがジャンクに化けます(elonaでいう金塊みたいなもの)。
-
-## 他Modとの競合
-
-アイテムデータを独自idで追加しているだけなので、無いはずなのですが……
-
-[KK With My Sister と併用するとフィートが取得できなくなる](https://github.com/hirmiura/elin-yar-craft/issues/2)現象が起きます。  
-https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
-
 ## ソース
 
-https://github.com/hirmiura/elin-yar-craft
+[github](https://github.com/hirmiura/elin-yar-craft)
 
 ## 変更履歴
 

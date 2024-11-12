@@ -9,9 +9,32 @@
 
 https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
 
+[h2]レシピ[/h2]
+
+低位の装備は最初から習得していますが、高位(内部Lvが10以上)の装備は閃く必要があります。
+
+[h2]ゲーム途中からの追加[/h2]
+
+問題ありません。
+
+[h2]ゲーム途中からの削除[/h2]
+
+[b]問題あります。[/b]
+各アイテムは本来の物とは別IDとなっている為です。
+これは素材と作業台を作り分ける為の措置です。
+
+具体的には、作成したアイテムがジャンクに化けます(elonaでいう金塊みたいなもの)。
+
+[h2]他Modとの競合[/h2]
+
+アイテムデータを独自idで追加しているだけなので、無いはずなのですが……
+
+[url=https://github.com/hirmiura/elin-yar-craft/issues/2]KK With My Sister と併用するとフィートが取得できなくなる[/url]現象が起きます。
+https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
+
 [h2]製作できる装備[/h2]
 
-現バージョンでは以下の装備が作成可能です。
+現バージョンでは以下の装備が製作できます。
 
 [list]
 [*] 近接武器(金属/木/石)
@@ -64,29 +87,6 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
   [*] 大兜
   [/list]
 [/list]
-
-[h2]レシピ[/h2]
-
-低位の装備は最初から習得していますが、高位(内部Lvが10以上)の装備は閃く必要があります。
-
-[h2]ゲーム途中からの追加[/h2]
-
-問題ありません。
-
-[h2]ゲーム途中からの削除[/h2]
-
-[b]問題あります。[/b]
-各アイテムは本来の物とは別IDとなっている為です。
-これは素材と作業台を作り分ける為の措置です。
-
-具体的には、作成したアイテムがジャンクに化けます(elonaでいう金塊みたいなもの)。
-
-[h2]他Modとの競合[/h2]
-
-アイテムデータを独自idで追加しているだけなので、無いはずなのですが……
-
-[url=https://github.com/hirmiura/elin-yar-craft/issues/2]KK With My Sister と併用するとフィートが取得できなくなる[/url]現象が起きます。
-https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 
 [h2]ソース[/h2]
 
