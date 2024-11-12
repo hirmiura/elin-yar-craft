@@ -1,0 +1,43 @@
+##### 共通設定 #####
+[DEFAULT.filter]
+id = "^(?!YarCraft)"
+naming = "m"
+
+[DEFAULT.recipe]
+id.prefix = "YarCraft"
+id.suffix = [ "wood", "stone", "metal" ]
+variant   = [ "log", "rock", "ingot" ]
+factory   = [ "factory_wood", "factory_stone", "anvil" ]
+defMat    = [ "oak", "granite", "iron" ]
+recipeKey = "{'*' if int(line['LV']) <= 10 else ''}"
+
+##### 個別設定 #####
+["kitchen knife and short sword"]
+filter.name = "^(kitchen knife|short sword)$"
+filter.category   = "^dagger$"
+recipe.components = "{variant},stick,+magic_stone"
+
+["wakizashi and scimitar"]
+filter.name = "^(wakizashi|scimitar)$"
+filter.category   = "^dagger$"
+recipe.components = "{variant},log,+magic_stone"
+
+[claymore]
+filter.name = "^claymore$"
+filter.category   = "^sword$"
+recipe.components = "{variant}/3,log,+magic_stone"
+
+["katana and long sword"]
+filter.name = "^(katana|long sword)$"
+filter.category   = "^sword$"
+recipe.components = "{variant}/2,log,+magic_stone"
+
+["bardish and battle axe and machine axe"]
+filter.name = "^(bardish|battle axe|machine axe)$"
+filter.category   = "^axe$"
+recipe.components = "{variant}/3,log,string,+magic_stone"
+
+["hand axe"]
+filter.name = "^hand axe$"
+filter.category   = "^axe$"
+recipe.components = "{variant}/2,log,string,+magic_stone"
