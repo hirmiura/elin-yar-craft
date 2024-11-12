@@ -2,6 +2,7 @@
 [DEFAULT.filter]
 id      = "^(?!YarCraft)"
 naming  = "m"
+factory = "^\\s*$"
 quality = "0"
 
 [DEFAULT.recipe]
