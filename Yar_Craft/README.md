@@ -45,6 +45,15 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
   * 合成盾
   * 騎士盾
   * 重層盾
+* 防具(頭)
+  * 兜
+  * 羽帽子
+  * 魔法帽
+  * 騎士兜
+  * 重兜
+  * フェアリーハット
+  * 合金兜
+  * 大兜
 
 ## レシピ
 
