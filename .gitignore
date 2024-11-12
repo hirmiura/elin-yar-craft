@@ -651,3 +651,11 @@ Mod_Slot/
 
 # Libreoffice lock file
 .~lock*
+
+# Elin_source へのリンク/ディレクトリ
+ElinSrc/
+ElinSrc
+
+# テスト用の一時ファイル
+test.csv
+test.toml

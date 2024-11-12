@@ -1,0 +1,130 @@
+##### 共通設定 #####
+[DEFAULT.filter]
+id     = "^(?!YarCraft)"
+naming = "m"
+
+[DEFAULT.recipe]
+id.prefix = "YarCraft"
+id.suffix = [ "wood", "stone", "metal" ]
+variant   = [ "log", "rock", "ingot" ]
+factory   = [ "factory_wood", "factory_stone", "anvil" ]
+defMat    = [ "oak", "granite", "iron" ]
+recipeKey = "{'*' if int(line['LV']) <= 10 else ''}"
+tag       = "{line['tag'] + ',noDrop,noShop' if line['tag'] else 'noDrop,noShop'}"
+
+##### 個別設定(近接武器) #####
+["kitchen knife and short sword"]
+filter.name       = "^(kitchen knife|short sword)$"
+filter.category   = "^dagger$"
+recipe.components = "{variant},stick,+magic_stone"
+
+["wakizashi and scimitar"]
+filter.name       = "^(wakizashi|scimitar)$"
+filter.category   = "^dagger$"
+recipe.components = "{variant},log,+magic_stone"
+
+[claymore]
+filter.name       = "^claymore$"
+filter.category   = "^sword$"
+recipe.components = "{variant}/3,log,+magic_stone"
+
+["katana and long sword"]
+filter.name       = "^(katana|long sword)$"
+filter.category   = "^sword$"
+recipe.components = "{variant}/2,log,+magic_stone"
+
+["bardish and battle axe and machine axe"]
+filter.name       = "^(bardish|battle axe|machine axe)$"
+filter.category   = "^axe$"
+recipe.components = "{variant}/3,log,string,+magic_stone"
+
+["hand axe"]
+filter.name       = "^hand axe$"
+filter.category   = "^axe$"
+recipe.components = "{variant}/2,log,string,+magic_stone"
+
+["Mallet"]
+filter.name       = "^Mallet$"
+filter.category   = "^blunt$"
+recipe.components = "{variant}/3,log,string,+magic_stone"
+
+["club"]
+filter.name       = "^club$"
+filter.category   = "^blunt$"
+recipe.components = "{variant}/2,+magic_stone"
+
+["mace"]
+filter.name       = "^mace$"
+filter.category   = "^blunt$"
+recipe.components = "{variant}/2,log,+magic_stone"
+
+["halberd"]
+filter.name       = "^halberd$"
+filter.category   = "^polearm$"
+recipe.components = "{variant}/3,log,string,+magic_stone"
+
+["trident and long spear"]
+filter.name       = "^(trident|long spear)$"
+filter.category   = "^polearm$"
+recipe.components = "{variant}/2,log,string,+magic_stone"
+
+["scythe"]
+filter.name       = "^scythe$"
+filter.category   = "^scythe$"
+recipe.components = "{variant}/3,log,string,+magic_stone"
+
+["war sickle"]
+filter.name       = "^war sickle$"
+filter.category   = "^scythe$"
+recipe.components = "{variant},log,string,+magic_stone"
+
+["long staff"]
+filter.name       = "^long staff$"
+filter.category   = "^staff$"
+recipe.components = "{variant},+magic_stone"
+
+["staff"]
+filter.name       = "^staff$"
+filter.category   = "^staff$"
+recipe.components = "{variant},+magic_stone"
+
+["claw"]
+filter.name       = "^claw$"
+filter.category   = "^martial$"
+recipe.components = "{variant},string,+magic_stone"
+
+["boxing gloves"]
+filter.name       = "^boxing gloves$"
+filter.category   = "^martial$"
+recipe.id.suffix  = ""
+recipe.variant    = [ "texture" ]
+recipe.factory    = "loom"
+recipe.defMat     = "hide"
+recipe.tierGroup  = "leather"
+recipe.components = "{variant}/2,+magic_stone"
+
+##### 個別設定(盾) #####
+["small shield and shield"]
+filter.name       = "^(small shield|shield)$"
+filter.category   = "^shield$"
+recipe.components = "{variant},log,string,+magic_stone"
+
+["round shield"]
+filter.name       = "^round shield$"
+filter.category   = "^shield$"
+recipe.components = "{variant},log/2,string,+magic_stone"
+
+["composite shield"]
+filter.name       = "^composite shield$"
+filter.category   = "^shield$"
+recipe.components = "{variant}/2,log,string,+magic_stone"
+
+["knight shield"]
+filter.name       = "^knight shield$"
+filter.category   = "^shield$"
+recipe.components = "{variant}/2,log/2,string,+magic_stone"
+
+["tower shield"]
+filter.name       = "^tower shield$"
+filter.category   = "^shield$"
+recipe.components = "{variant}/3,log/2,string,+magic_stone"
