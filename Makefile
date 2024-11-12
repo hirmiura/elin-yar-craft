@@ -50,16 +50,16 @@ check_link:
 # 生成
 #==============================================================================
 generate: ## csvファイルを生成します
-generate: Yar_Craft/EDEFW_Thing_YarCraft.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv update_deprecated
+generate: Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv update_deprecated
 
-Yar_Craft/EDEFW_Thing_YarCraft.csv: $(D_ElinSrc)/things.csv yarcraft.toml
-	$(E_YarCraft) -i $< -o $@ -c yarcraft.toml
+Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv: $(D_ElinSrc)/things.csv yarcraft_weapon.toml
+	$(E_YarCraft) -i $< -o $@ -c yarcraft_weapon.toml
 
 Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv: $(D_ElinSrc)/things.csv yarcraft_armor.toml
 	$(E_YarCraft) -i $< -o $@ -c yarcraft_armor.toml
 
-update_deprecated: Yar_Craft/EDEFW_Thing_YarCraft_deprecated.csv Yar_Craft/EDEFW_Thing_YarCraft.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
-	$(E_UpdateDep) $< Yar_Craft/EDEFW_Thing_YarCraft.csv
+update_deprecated: Yar_Craft/EDEFW_Thing_YarCraft_deprecated.csv Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
+	$(E_UpdateDep) $< Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv
 	$(E_UpdateDep) $< Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
 
 
