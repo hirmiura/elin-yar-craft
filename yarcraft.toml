@@ -1,7 +1,8 @@
 ##### 共通設定 #####
 [DEFAULT.filter]
-id     = "^(?!YarCraft)"
-naming = "m"
+id      = "^(?!YarCraft)"
+naming  = "m"
+quality = "0"
 
 [DEFAULT.recipe]
 id.prefix = "YarCraft"
@@ -10,7 +11,6 @@ variant   = [ "log", "rock", "ingot" ]
 factory   = [ "factory_wood", "factory_stone", "anvil" ]
 defMat    = [ "oak", "granite", "iron" ]
 recipeKey = "{'*' if int(line['LV']) <= 10 else ''}"
-quality   = "0"
 tag       = "{line['tag'] + ',noDrop,noShop' if line['tag'] else 'noDrop,noShop'}"
 
 ##### 個別設定(近接武器) #####
