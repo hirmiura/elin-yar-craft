@@ -44,11 +44,24 @@ check_link:
 
 
 #==============================================================================
+# 生成
+#==============================================================================
+generate: ## csvファイルを生成します
+generate: Yar_Craft/EDEFW_Thing_YarCraft.csv update_deprecated
+
+Yar_Craft/EDEFW_Thing_YarCraft.csv: $(D_ElinSrc)/things.csv yarcraft.toml
+	poetry run src/elin_yar_craft/yarcraft.py -i $< -o $@ -c yarcraft.toml
+
+update_deprecated: Yar_Craft/EDEFW_Thing_YarCraft_deprecated.csv Yar_Craft/EDEFW_Thing_YarCraft.csv
+	poetry run src/elin_yar_craft/update_deprecated.py $^
+
+
+#==============================================================================
 # ビルド
 #==============================================================================
 .PHONY: build
 build: ## ビルドします
-build:
+build: generate
 
 
 #==============================================================================
@@ -56,7 +69,7 @@ build:
 #==============================================================================
 .PHONY: all
 all: ## 全ての作業を一括で実施します
-all: build
+all: check build
 
 
 #==============================================================================
