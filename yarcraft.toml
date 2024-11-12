@@ -130,3 +130,59 @@ recipe.components = "{variant}/2,log/2,string,+magic_stone"
 filter.name       = "^tower shield$"
 filter.category   = "^shield$"
 recipe.components = "{variant}/3,log/2,string,+magic_stone"
+
+##### 個別設定(兜) #####
+["helm"]
+filter.name       = "^helm$"
+filter.category   = "^head$"
+recipe.components = "{variant},+rune"
+
+["feather hat"]
+filter.name       = "^feather hat$"
+filter.category   = "^head$"
+recipe.id.suffix  = ""
+recipe.variant    = [ "texture" ]
+recipe.factory    = "loom"
+recipe.defMat     = "cashmere"
+recipe.tierGroup  = "leather"
+recipe.components = "{variant}/2,+rune"
+
+["wizard hat"]
+filter.name       = "^wizard hat$"
+filter.category   = "^head$"
+recipe.id.suffix  = ""
+recipe.variant    = [ "texture" ]
+recipe.factory    = "loom"
+recipe.defMat     = "zylon"
+recipe.tierGroup  = "leather"
+recipe.components = "{variant}/2,+rune"
+
+["knight helm"]
+filter.name       = "^knight helm$"
+filter.category   = "^head$"
+recipe.components = "{variant}/2,+rune"
+
+["heavy helm"]
+filter.name       = "^heavy helm$"
+filter.category   = "^head$"
+recipe.components = "{variant}/2,+rune"
+
+["fairy hat"]
+filter.name       = "^fairy hat$"
+filter.category   = "^head$"
+recipe.id.suffix  = ""
+recipe.variant    = [ "texture" ]
+recipe.factory    = "loom"
+recipe.defMat     = "hemp"
+recipe.tierGroup  = "leather"
+recipe.components = "{variant}/2,+rune"
+
+["composite helm"]
+filter.name       = "^composite helm$"
+filter.category   = "^head$"
+recipe.components = "{variant}/2,+rune"
+
+["great helm"]
+filter.name       = "^great helm$"
+filter.category   = "^head$"
+recipe.components = "{variant}/3,+rune"
