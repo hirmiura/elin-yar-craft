@@ -32,6 +32,11 @@
 [KK With My Sister と併用するとフィートが取得できなくなる](https://github.com/hirmiura/elin-yar-craft/issues/2)現象が起きます。  
 [KK With My Sister](https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949)
 
+Modの読み込み順を KK With My Sister を先にすることで治ります。
+
+1. KK With My Sister
+2. Elin Data Expanded Framework
+
 ## 製作できる装備
 
 現バージョンでは以下の装備が製作できます。
