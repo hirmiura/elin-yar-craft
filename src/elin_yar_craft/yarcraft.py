@@ -12,6 +12,7 @@ import sys
 import tomllib
 from typing import Any, ClassVar
 
+from mergedeep import merge
 from pydantic import BaseModel
 
 
@@ -82,10 +83,9 @@ class CraftConf(BaseModel):
         assert rule_name in self.rules
         key_filter = CraftConf.key_filter
         # 共通ルールと個別ルールをマージ
-        default_rule = self.default[key_filter] if key_filter in self.default else {}
-        tmp_rule = self.rules[rule_name]
-        own_rule = tmp_rule[key_filter] if key_filter in tmp_rule else {}
-        rule = default_rule | own_rule
+        default_rule = self.default.get(key_filter) or {}
+        own_rule = self.rules[rule_name].get(key_filter) or {}
+        rule = merge({}, default_rule, own_rule)
         # マッチング
         satisfy = False
         for key, pattern in rule.items():
@@ -99,10 +99,9 @@ class CraftConf(BaseModel):
         assert rule_name in self.rules
         key_recipe = CraftConf.key_recipe
         # 共通ルールと個別ルールをマージ
-        default_recipe = self.default[key_recipe] if key_recipe in self.default else {}
-        tmp_recipe = self.rules[rule_name]
-        own_recipe = tmp_recipe[key_recipe] if key_recipe in tmp_recipe else {}
-        recipe = default_recipe | own_recipe
+        default_recipe = self.default.get(key_recipe) or {}
+        own_recipe = self.rules[rule_name].get(key_recipe) or {}
+        recipe: dict[str, Any] = dict(merge({}, default_recipe, own_recipe))
         # 生成
         key_variant = CraftConf.key_variant
         key_id = CraftConf.key_id
