@@ -85,6 +85,7 @@ all: check build
 .PHONY: clean clean-all
 clean: ## クリーンアップします
 clean:
+	rm -f Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
 
 clean-all: ## 生成した全てのファイルを削除します
 clean-all: clean
