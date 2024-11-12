@@ -65,3 +65,9 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
 ## ソース
 
 https://github.com/hirmiura/elin-yar-craft
+
+## 変更履歴
+
+* 2024/11/12  
+スクリプトによる生成に切り替えました。  
+旧データは退避しているので後方互換は問題ないはずです。
