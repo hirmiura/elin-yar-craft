@@ -10,6 +10,7 @@ variant   = [ "log", "rock", "ingot" ]
 factory   = [ "factory_wood", "factory_stone", "anvil" ]
 defMat    = [ "oak", "granite", "iron" ]
 recipeKey = "{'*' if int(line['LV']) <= 10 else ''}"
+tag       = "{line['tag'] + ',noDrop,noShop' if line['tag'] else 'noDrop,noShop'}"
 
 ##### 個別設定 #####
 ["kitchen knife and short sword"]
