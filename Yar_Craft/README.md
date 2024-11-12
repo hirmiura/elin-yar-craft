@@ -62,6 +62,13 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
 
 具体的には、作成したアイテムがジャンクに化けます(elonaでいう金塊みたいなもの)。
 
+## 他Modとの競合
+
+アイテムデータを独自idで追加しているだけなので、無いはずなのですが……
+
+[KK With My Sister と併用するとフィートが取得できなくなる](https://github.com/hirmiura/elin-yar-craft/issues/2)現象が起きます。  
+https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
+
 ## ソース
 
 https://github.com/hirmiura/elin-yar-craft
