@@ -12,7 +12,7 @@ defMat    = [ "oak", "granite", "iron" ]
 recipeKey = "{'*' if int(line['LV']) <= 10 else ''}"
 tag       = "{line['tag'] + ',noDrop,noShop' if line['tag'] else 'noDrop,noShop'}"
 
-##### 個別設定 #####
+##### 個別設定(近接武器) #####
 ["kitchen knife and short sword"]
 filter.name       = "^(kitchen knife|short sword)$"
 filter.category   = "^dagger$"
@@ -103,6 +103,7 @@ recipe.defMat     = "hide"
 recipe.tierGroup  = "leather"
 recipe.components = "{variant}/2,+magic_stone"
 
+##### 個別設定(盾) #####
 ["small shield and shield"]
 filter.name       = "^(small shield|shield)$"
 filter.category   = "^shield$"
