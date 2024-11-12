@@ -109,6 +109,12 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
   [*] 法王衣
   [*] 重層鎧
   [/list]
+[*] 腰防具(金属/木/石/布)
+  [list]
+  [*] 腰当
+  [*] 合成腰当
+  [*] 重層腰当
+  [/list]
 [/list]
 
 [h2]ソース[/h2]

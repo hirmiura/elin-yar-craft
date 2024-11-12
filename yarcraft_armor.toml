@@ -127,3 +127,25 @@ recipe.components = "{variant}/2,texture,string,resin,+rune"
 filter.name       = "^plate mail$"
 filter.category   = "^torso$"
 recipe.components = "{variant}/6,texture/2,string/2,resin/6,bone/2,+rune"
+
+##### 個別設定(腰) #####
+["girdle"] # バニラと競合しないように
+filter.name       = "^girdle$"
+filter.category   = "^waist$"
+filter.factory    = ".*"
+recipe.components = "{variant}/3,fiber/3|texture,needle/2,+rune"
+recipe.id.suffix  = [ "wood", "metal", "cloth" ]
+recipe.variant    = [ "log", "ingot", "texture" ]
+recipe.factory    = [ "factory_wood", "factory_metal", "loom" ]
+recipe.defMat     = [ "oak", "iron", "cotton" ]
+recipe.tierGroup  = [ "metal", "metal", "leather" ]
+
+["composite girdle"]
+filter.name       = "^composite girdle$"
+filter.category   = "^waist$"
+recipe.components = "{variant}/2,fiber/3|texture,needle/2,+rune"
+
+["plate girdle"]
+filter.name       = "^plate girdle$"
+filter.category   = "^waist$"
+recipe.components = "{variant}/3,ingot,fiber/3|texture,needle/2,+rune"
