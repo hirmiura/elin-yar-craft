@@ -74,7 +74,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
 
 アイテムデータを独自idで追加しているだけなので、無いはずなのですが……
 
-[KK With My Sister と併用するとフィートが取得できなくなる](https://github.com/hirmiura/elin-yar-craft/issues/2)現象が起きます。
+[url=https://github.com/hirmiura/elin-yar-craft/issues/2]KK With My Sister と併用するとフィートが取得できなくなる[/url]現象が起きます。
 https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 
 [h2]ソース[/h2]
