@@ -149,3 +149,40 @@ recipe.components = "{variant}/2,fiber/3|texture,needle/2,+rune"
 filter.name       = "^plate girdle$"
 filter.category   = "^waist$"
 recipe.components = "{variant}/3,ingot,fiber/3|texture,needle/2,+rune"
+
+##### 個別設定(手) #####
+["light gloves"] # バニラと競合しないように
+filter.name       = "^light gloves$"
+filter.category   = "^arm$"
+filter.factory    = ".*"
+recipe.components = "{variant},texture,needle/2,+rune"
+
+["thick gauntlets"]
+filter.name       = "^thick gauntlets$"
+filter.category   = "^arm$"
+recipe.components = "{variant},fiber/3|texture,needle,+rune"
+
+["composite gauntlets"]
+filter.name       = "^composite gauntlets$"
+filter.category   = "^arm$"
+recipe.components = "{variant}/2,fiber/3|texture,needle,+rune"
+
+["gloves"]
+filter.name       = "^gloves$"
+filter.category   = "^arm$"
+recipe.components = "{variant},fiber/3|texture,needle,+rune"
+
+["plate gauntlets"]
+filter.name       = "^plate gauntlets$"
+filter.category   = "^arm$"
+recipe.components = "{variant}/2,ingot,fiber/3|texture,needle/2,+rune"
+
+["decorated gloves"]
+filter.name       = "^decorated gloves$"
+filter.category   = "^arm$"
+recipe.components = "{variant},fiber/3|texture,needle/2,+rune"
+
+["great gauntlets"]
+filter.name       = "^plate$"
+filter.category   = "^arm$"
+recipe.components = "{variant}/2,ingot,fiber/3|texture,needle/2,+rune"
