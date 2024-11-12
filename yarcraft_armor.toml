@@ -186,3 +186,40 @@ recipe.components = "{variant},fiber/3|texture,needle/2,+rune"
 filter.name       = "^plate$"
 filter.category   = "^arm$"
 recipe.components = "{variant}/2,ingot,fiber/3|texture,needle/2,+rune"
+
+##### 個別設定(足) #####
+["shoes"] # バニラと競合しないように
+filter.name       = "^shoes$"
+filter.category   = "^foot$"
+filter.factory    = ".*"
+recipe.components = "{variant},texture,string,needle,+rune"
+
+["boots"]
+filter.name       = "^boots$"
+filter.category   = "^foot$"
+recipe.components = "{variant},texture,string,needle,+rune"
+
+["heavy boots"]
+filter.name       = "^heavy boots$"
+filter.category   = "^foot$"
+recipe.components = "{variant}/2,texture,string,needle,+rune"
+
+["tight boots"]
+filter.name       = "^tight boots$"
+filter.category   = "^foot$"
+recipe.components = "{variant},texture,string,needle,+rune"
+
+["composite boots"]
+filter.name       = "^composite boots$"
+filter.category   = "^foot$"
+recipe.components = "{variant}/3,texture/2,string,needle,+rune"
+
+["armored boots"]
+filter.name       = "^armored boots$"
+filter.category   = "^foot$"
+recipe.components = "{variant}/3,texture,string,needle,+rune"
+
+["boots_foreign"] # nameが被っているのでidを使う
+filter.id         = "^boots_foreign$"
+filter.category   = "^foot$"
+recipe.components = "{variant}/2,texture/2,string,needle,+rune"
