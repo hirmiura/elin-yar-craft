@@ -1,0 +1,56 @@
+##### 共通設定 #####
+[DEFAULT.filter]
+id      = "^(?!YarCraft)"
+naming  = "m"
+factory = "^\\s*$"
+quality = "0"
+
+[DEFAULT.recipe]
+id.prefix = "YarCraft"
+id.suffix = [ "wood", "stone", "metal", "cloth" ]
+variant   = [ "log", "rock", "ingot", "texture" ]
+factory   = [ "factory_wood", "factory_stone", "factory_metal", "loom" ]
+defMat    = [ "oak", "granite", "iron", "cotton" ]
+recipeKey = "{'*' if int(line['LV']) <= 10 else ''}"
+tag       = "{line['tag'] + ',noDrop,noShop' if line['tag'] else 'noDrop,noShop'}"
+
+##### 個別設定(兜) #####
+["helm"]
+filter.name       = "^helm$"
+filter.category   = "^head$"
+recipe.components = "{variant},+rune"
+
+["feather hat"]
+filter.name       = "^feather hat$"
+filter.category   = "^head$"
+recipe.components = "{variant},texture,+rune"
+
+["wizard hat"]
+filter.name       = "^wizard hat$"
+filter.category   = "^head$"
+recipe.components = "{variant},texture,+rune"
+
+["knight helm"]
+filter.name       = "^knight helm$"
+filter.category   = "^head$"
+recipe.components = "{variant}/2,+rune"
+
+["heavy helm"]
+filter.name       = "^heavy helm$"
+filter.category   = "^head$"
+recipe.components = "{variant}/2,+rune"
+
+["fairy hat"]
+filter.name       = "^fairy hat$"
+filter.category   = "^head$"
+recipe.components = "{variant},texture,+rune"
+
+["composite helm"]
+filter.name       = "^composite helm$"
+filter.category   = "^head$"
+recipe.components = "{variant}/2,+rune"
+
+["great helm"]
+filter.name       = "^great helm$"
+filter.category   = "^head$"
+recipe.components = "{variant}/3,+rune"
