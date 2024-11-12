@@ -5,6 +5,9 @@ SHELL := /bin/bash
 
 # 各種ディレクトリ
 D_ElinSrc	:= ElinSrc
+# 実行ファイル
+E_YarCraft	:= poetry run src/elin_yar_craft/yarcraft.py
+E_UpdateDep	:= poetry run src/elin_yar_craft/update_deprecated.py
 
 
 #==============================================================================
@@ -47,13 +50,17 @@ check_link:
 # 生成
 #==============================================================================
 generate: ## csvファイルを生成します
-generate: Yar_Craft/EDEFW_Thing_YarCraft.csv update_deprecated
+generate: Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv update_deprecated
 
-Yar_Craft/EDEFW_Thing_YarCraft.csv: $(D_ElinSrc)/things.csv yarcraft.toml
-	poetry run src/elin_yar_craft/yarcraft.py -i $< -o $@ -c yarcraft.toml
+Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv: $(D_ElinSrc)/things.csv yarcraft_weapon.toml
+	$(E_YarCraft) -i $< -o $@ -c yarcraft_weapon.toml
 
-update_deprecated: Yar_Craft/EDEFW_Thing_YarCraft_deprecated.csv Yar_Craft/EDEFW_Thing_YarCraft.csv
-	poetry run src/elin_yar_craft/update_deprecated.py $^
+Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv: $(D_ElinSrc)/things.csv yarcraft_armor.toml
+	$(E_YarCraft) -i $< -o $@ -c yarcraft_armor.toml
+
+update_deprecated: Yar_Craft/EDEFW_Thing_YarCraft_deprecated.csv Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
+	$(E_UpdateDep) $< Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv
+	$(E_UpdateDep) $< Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
 
 
 #==============================================================================
@@ -78,6 +85,7 @@ all: check build
 .PHONY: clean clean-all
 clean: ## クリーンアップします
 clean:
+	rm -f Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
 
 clean-all: ## 生成した全てのファイルを削除します
 clean-all: clean
