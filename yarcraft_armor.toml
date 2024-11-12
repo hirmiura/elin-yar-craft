@@ -11,6 +11,7 @@ id.suffix = [ "wood", "stone", "metal", "cloth" ]
 variant   = [ "log", "rock", "ingot", "texture" ]
 factory   = [ "factory_wood", "factory_stone", "factory_metal", "loom" ]
 defMat    = [ "oak", "granite", "iron", "cotton" ]
+tierGroup = [ "metal", "metal", "metal", "leather" ]
 recipeKey = "{'*' if int(line['LV']) <= 10 else ''}"
 tag       = "{line['tag'] + ',noDrop,noShop' if line['tag'] else 'noDrop,noShop'}"
 
@@ -54,3 +55,75 @@ recipe.components = "{variant}/2,+rune"
 filter.name       = "^great helm$"
 filter.category   = "^head$"
 recipe.components = "{variant}/3,+rune"
+
+##### 個別設定(体) #####
+["robe"]
+filter.name       = "^robe$"
+filter.category   = "^torso$"
+recipe.components = "{variant},texture,resin,string,+rune"
+
+["breastplate"] # バニラと競合しないように
+filter.name       = "^breastplate$"
+filter.category   = "^torso$"
+filter.factory    = ".*"
+recipe.components = "{variant}/3,resin/4,bone/2,+rune"
+recipe.id.suffix  = [ "wood", "metal", "cloth" ]
+recipe.variant    = [ "log", "ingot", "texture" ]
+recipe.factory    = [ "factory_wood", "factory_metal", "loom" ]
+recipe.defMat     = [ "oak", "iron", "cotton" ]
+recipe.tierGroup  = [ "metal", "metal", "leather" ]
+
+["shirt"]
+filter.name       = "^shirt$"
+filter.category   = "^torso$"
+recipe.components = "{variant},texture,string,resin,+rune"
+
+["light mail"]
+filter.name       = "^light mail$"
+filter.category   = "^torso$"
+recipe.components = "{variant}/2,texture,string,resin/2,+rune"
+
+["banded mail"]
+filter.name       = "^banded mail$"
+filter.category   = "^torso$"
+recipe.components = "{variant}/5,texture/2,string,resin/4,bone/2,+rune"
+
+["coat"]
+filter.name       = "^coat$"
+filter.category   = "^torso$"
+recipe.components = "{variant}/2,texture,string,resin/2,bone,+rune"
+
+["ring mail"]
+filter.name       = "^ring mail$"
+filter.category   = "^torso$"
+recipe.components = "{variant}/4,texture/2,string,resin/3,bone/2,+rune"
+
+["great armor"]
+filter.name       = "^great armor$"
+filter.category   = "^torso$"
+recipe.components = "{variant}/5,texture/2,string,resin/4,bone/2,+rune"
+
+["composite mail"]
+filter.name       = "^composite mail$"
+filter.category   = "^torso$"
+recipe.components = "{variant}/4,texture/2,string,resin/3,bone/2,+rune"
+
+["bulletproof jacket"]
+filter.name       = "^bulletproof jacket$"
+filter.category   = "^torso$"
+recipe.components = "{variant}/2,texture/2,string,resin/2,bone,+rune"
+
+["chain mail"]
+filter.name       = "^chain mail$"
+filter.category   = "^torso$"
+recipe.components = "{variant}/4,texture/2,string,resin/3,bone/2,+rune"
+
+["pope robe"]
+filter.name       = "^pope robe$"
+filter.category   = "^torso$"
+recipe.components = "{variant}/2,texture,string,resin,+rune"
+
+["plate mail"]
+filter.name       = "^plate mail$"
+filter.category   = "^torso$"
+recipe.components = "{variant}/6,texture/2,string/2,resin/6,bone/2,+rune"
