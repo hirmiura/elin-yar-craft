@@ -3,11 +3,13 @@
 #
 SHELL := /bin/bash
 
-# 各種ディレクトリ
+# 各種ディレクトリ/ファイル
 D_ElinSrc	:= ElinSrc
+F_CN_Thing	:= CN_Thing.xlsx
 # 実行ファイル
 E_YarCraft	:= poetry run src/elin_yar_craft/yarcraft.py
 E_UpdateDep	:= poetry run src/elin_yar_craft/update_deprecated.py
+E_Translate	:= poetry run src/elin_yar_craft/translate.py
 
 
 #==============================================================================
@@ -23,7 +25,7 @@ include Help.mk
 #==============================================================================
 .PHONY: check
 check: ## 事前にチェック項目を確認します
-check: check_link
+check: check_link check_link_cn
 
 
 #==============================================================================
@@ -47,6 +49,25 @@ check_link:
 
 
 #==============================================================================
+# Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsx へのリンク/ディレクトリを確認
+#==============================================================================
+.PHONY: check_link
+check_link_cn: ## Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsxへのリンク/ディレクトリを確認します
+check_link_cn:
+	@echo -e '$(CC_BrBlue)========== $@ ==========$(CC_Reset)'
+	@echo '"$(F_CN_Thing)" をチェックしています'
+	@if [[ -L $(F_CN_Thing) && `readlink $(F_CN_Thing) ` ]] ; then \
+		echo -e '    $(CC_BrGreen)SUCCESS$(CC_Reset): リンクです' ; \
+	elif [[ -d $(F_CN_Thing) ]] ; then \
+		echo -e '    $(CC_BrGreen)SUCCESS$(CC_Reset): ディレクトリです' ; \
+	else \
+		echo -e '    \a$(CC_BrRed)ERROR: "$(F_CN_Thing)" に "Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsx" へのリンクを張って下さい$(CC_Reset)' ; \
+		echo -e '    $(CC_BrRed)例: ln -s "/mnt/c/SteamLibrary/steamapps/common/Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsx" $(F_CN_Thing)$(CC_Reset)' ; \
+		exit 1 ; \
+	fi
+
+
+#==============================================================================
 # 生成
 #==============================================================================
 generate: ## csvファイルを生成します
@@ -64,11 +85,21 @@ update_deprecated: Yar_Craft/EDEFW_Thing_YarCraft_deprecated.csv Yar_Craft/EDEFW
 
 
 #==============================================================================
+# 生成(中国語版)
+#==============================================================================
+generate_cn: ## 中国語版csvファイルを生成します
+generate_cn: $(subst Yar_Craft/,Yar_Craft_CN/,$(wildcard Yar_Craft/*.csv))
+
+Yar_Craft_CN/%.csv: Yar_Craft/%.csv
+	$(E_Translate) -i $< -o $@ -t CN_Thing.xlsx
+
+
+#==============================================================================
 # ビルド
 #==============================================================================
 .PHONY: build
 build: ## ビルドします
-build: generate
+build: generate generate_cn
 
 
 #==============================================================================
@@ -84,8 +115,11 @@ all: check build
 #==============================================================================
 .PHONY: clean clean-all
 clean: ## クリーンアップします
-clean:
+clean: clean-cn
 	rm -f Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
+
+clean-cn:
+	rm -f Yar_Craft_CN/*.csv
 
 clean-all: ## 生成した全てのファイルを削除します
 clean-all: clean
