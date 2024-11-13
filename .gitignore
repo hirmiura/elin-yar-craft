@@ -656,6 +656,9 @@ Mod_Slot/
 ElinSrc/
 ElinSrc
 
+# 翻訳に使うThing.xlsx
+CN_Thing.xlsx
+
 # テスト用の一時ファイル
 test.csv
 test.toml
