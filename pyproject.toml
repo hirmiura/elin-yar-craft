@@ -15,7 +15,7 @@ openpyxl = "^3.1.5"
 
 
 [tool.poetry.group.dev.dependencies]
-mypy = "^1.9"
+mypy = "^1.13.0"
 
 
 [build-system]
