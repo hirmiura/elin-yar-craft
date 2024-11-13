@@ -97,10 +97,9 @@ class TransThing(BaseModel):
                         TransThing.key_unit,
                         TransThing.key_unknown,
                         TransThing.key_roomName,
-                        TransThing.key_name2,
                     ]:
                         new[key] = trans[key]
-                        return new
+                    return new
         return None
 
 
