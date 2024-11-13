@@ -9,6 +9,7 @@ F_CN_Thing	:= CN_Thing.xlsx
 # 実行ファイル
 E_YarCraft	:= poetry run src/elin_yar_craft/yarcraft.py
 E_UpdateDep	:= poetry run src/elin_yar_craft/update_deprecated.py
+E_Translate	:= poetry run src/elin_yar_craft/translate.py
 
 
 #==============================================================================
@@ -84,11 +85,21 @@ update_deprecated: Yar_Craft/EDEFW_Thing_YarCraft_deprecated.csv Yar_Craft/EDEFW
 
 
 #==============================================================================
+# 生成(中国語版)
+#==============================================================================
+generate_cn: ## 中国語版csvファイルを生成します
+generate_cn: $(subst Yar_Craft/,Yar_Craft_CN/,$(wildcard Yar_Craft/*.csv))
+
+Yar_Craft_CN/%.csv: Yar_Craft/%.csv
+	$(E_Translate) -i $< -o $@ -t CN_Thing.xlsx
+
+
+#==============================================================================
 # ビルド
 #==============================================================================
 .PHONY: build
 build: ## ビルドします
-build: generate
+build: generate generate_cn
 
 
 #==============================================================================
@@ -104,8 +115,11 @@ all: check build
 #==============================================================================
 .PHONY: clean clean-all
 clean: ## クリーンアップします
-clean:
+clean: clean-cn
 	rm -f Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
+
+clean-cn:
+	rm -f Yar_Craft_CN/*.csv
 
 clean-all: ## 生成した全てのファイルを削除します
 clean-all: clean
