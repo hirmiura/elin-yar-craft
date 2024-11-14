@@ -122,7 +122,7 @@ class CraftConf(BaseModel):
                     continue
                 item = CraftConf.get_value_by_index_or_own(recipe_item, index)
                 item = eval(f'f"""{item}"""')
-                # item = item.format(index=index, variant=variant, **line)
+                item = re.sub(r"/1\b", "", item)  # 1つのみ指定は消しておく
                 new[recipe_key] = item
             result.append(new)
 
