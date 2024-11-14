@@ -134,7 +134,7 @@ clean-cn:
 	rm -f Yar_Craft_CN/*.csv
 
 clean-docs:
-	rm -f docs/*.txt
+	rm -f docs/workshop_desc*.txt
 
 clean-all: ## 生成した全てのファイルを削除します
 clean-all: clean
