@@ -51,7 +51,7 @@ check_link:
 #==============================================================================
 # Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsx へのリンク/ディレクトリを確認
 #==============================================================================
-.PHONY: check_link
+.PHONY: check_link_cn
 check_link_cn: ## Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsxへのリンク/ディレクトリを確認します
 check_link_cn:
 	@echo -e '$(CC_BrBlue)========== $@ ==========$(CC_Reset)'
@@ -70,6 +70,7 @@ check_link_cn:
 #==============================================================================
 # 生成
 #==============================================================================
+.PHONY: generate update_deprecated
 generate: ## csvファイルを生成します
 generate: Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv update_deprecated
 
@@ -87,6 +88,7 @@ update_deprecated: Yar_Craft/EDEFW_Thing_YarCraft_deprecated.csv Yar_Craft/EDEFW
 #==============================================================================
 # 生成(中国語版)
 #==============================================================================
+.PHONY: generate_cn
 generate_cn: ## 中国語版csvファイルを生成します
 generate_cn: $(subst Yar_Craft/,Yar_Craft_CN/,$(wildcard Yar_Craft/*.csv))
 
@@ -113,7 +115,7 @@ all: check build
 #==============================================================================
 # クリーンアップ
 #==============================================================================
-.PHONY: clean clean-all
+.PHONY: clean clean-cn clean-all
 clean: ## クリーンアップします
 clean: clean-cn
 	rm -f Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
