@@ -53,3 +53,10 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 [h2]Source[/h2]
 
 https://github.com/hirmiura/elin-yar-craft
+
+[h2]Changelog[/h2]
+
+[list]
+[*] 2024-11-15
+The recipes were standardized to change the required amount according to the basic values of weight and value for each item.
+[/list]

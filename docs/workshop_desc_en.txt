@@ -66,13 +66,13 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 [*] Armor
   [list]
   [*] arm
-      light gloves, thick gauntlets, composite gauntlets, gloves, plate gauntlets, decorated gloves
+      light gloves, thick gauntlets, composite gauntlets, gloves, plate gauntlets, decorated gloves, great gauntlets
   [*] back
       light cloak, wing, cloak, battle cloak, armored cloak, feather
   [*] foot
       shoes, boots, heavy boots, tight boots, composite boots, armored boots
   [*] head
-      helm, feather hat, wizard hat, knight helm, heavy helm, fairy hat, composite helm, great helm
+      bucket, helm, feather hat, wizard hat, knight helm, heavy helm, fairy hat, composite helm, great helm
   [*] torso
       robe, breastplate, shirt, light mail, banded mail, coat, ring mail, great armor, composite mail, bulletproof jacket, chain mail, pope robe, plate mail
   [*] waist
@@ -90,3 +90,10 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 [h2]Source[/h2]
 
 https://github.com/hirmiura/elin-yar-craft
+
+[h2]Changelog[/h2]
+
+[list]
+[*] 2024-11-15
+The recipes were standardized to change the required amount according to the basic values of weight and value for each item.
+[/list]

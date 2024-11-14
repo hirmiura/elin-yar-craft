@@ -91,7 +91,7 @@ update_deprecated: Yar_Craft/EDEFW_Thing_YarCraft_deprecated.csv Yar_Craft/EDEFW
 #==============================================================================
 .PHONY: generate_cn
 generate_cn: ## 中国語版csvファイルを生成します
-generate_cn: $(subst Yar_Craft/,Yar_Craft_CN/,$(wildcard Yar_Craft/*.csv))
+generate_cn: Yar_Craft_CN/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft_CN/EDEFW_Thing_YarCraft_Armor.csv Yar_Craft_CN/EDEFW_Thing_YarCraft_deprecated.csv
 
 Yar_Craft_CN/%.csv: Yar_Craft/%.csv
 	$(E_Translate) -i $< -o $@ -t CN_Thing.xlsx

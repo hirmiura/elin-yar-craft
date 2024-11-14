@@ -74,17 +74,22 @@ class CraftConf(BaseModel):
         return self
 
     def check_and_create(self, line: dict[str, Any]) -> list[dict[str, Any]]:
-        for rule_name in self.rules:
-            if self.check(line, rule_name):
-                return self.create_variant(line, rule_name)
+        if len(self.rules):
+            for rule_name in self.rules:
+                if self.check(line, rule_name):
+                    return self.create_variant(line, rule_name)
+        else:
+            # デフォルトルールのみの場合
+            if self.check(line, "", True):
+                return self.create_variant(line, "", True)
         return []
 
-    def check(self, line: dict[str, Any], rule_name: str) -> bool:
-        assert rule_name in self.rules
+    def check(self, line: dict[str, Any], rule_name: str, only_default: bool = False) -> bool:
+        assert only_default or rule_name in self.rules
         key_filter = CraftConf.key_filter
         # 共通ルールと個別ルールをマージ
         default_rule = self.default.get(key_filter) or {}
-        own_rule = self.rules[rule_name].get(key_filter) or {}
+        own_rule = (self.rules[rule_name].get(key_filter) or {}) if not only_default else {}
         rule = merge({}, default_rule, own_rule)
         # マッチング
         satisfy = False
@@ -95,12 +100,14 @@ class CraftConf(BaseModel):
             satisfy = True
         return satisfy
 
-    def create_variant(self, line: dict[str, Any], rule_name: str) -> list[dict[str, Any]]:
-        assert rule_name in self.rules
+    def create_variant(
+        self, line: dict[str, Any], rule_name: str, only_default: bool = False
+    ) -> list[dict[str, Any]]:
+        assert only_default or rule_name in self.rules
         key_recipe = CraftConf.key_recipe
         # 共通ルールと個別ルールをマージ
         default_recipe = self.default.get(key_recipe) or {}
-        own_recipe = self.rules[rule_name].get(key_recipe) or {}
+        own_recipe = (self.rules[rule_name].get(key_recipe) or {}) if not only_default else {}
         recipe: dict[str, Any] = dict(merge({}, default_recipe, own_recipe))
         # 生成
         key_variant = CraftConf.key_variant
@@ -115,7 +122,7 @@ class CraftConf(BaseModel):
                     continue
                 item = CraftConf.get_value_by_index_or_own(recipe_item, index)
                 item = eval(f'f"""{item}"""')
-                # item = item.format(index=index, variant=variant, **line)
+                item = re.sub(r"/1\b", "", item)  # 1つのみ指定は消しておく
                 new[recipe_key] = item
             result.append(new)
 
