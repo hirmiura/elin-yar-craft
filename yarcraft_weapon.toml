@@ -9,7 +9,7 @@ quality  = "0"
 id.prefix  = "YarCraft"
 id.suffix  = [ "wood", "stone", "metal", "cloth" ]
 variant    = [ "log", "rock", "ingot", "texture" ]
-factory    = [ "factory_wood", "factory_stone", "factory_metal", "loom" ]
+factory    = [ "factory_wood", "factory_stone", "anvil", "loom" ]
 defMat     = [ "oak", "granite", "iron", "cotton" ]
 tierGroup  = [ "metal", "metal", "metal", "leather" ]
 recipeKey  = "{'*' if int(line['LV']) <= 10 else ''}"
