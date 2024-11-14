@@ -53,3 +53,10 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 [h2]原始码[/h2]
 
 https://github.com/hirmiura/elin-yar-craft
+
+[h2]修订历史[/h2]
+
+[list]
+[*] 2024-11-15
+配方已标准化，可根据每种物品的重量和价值的基本值改变所需数量。
+[/list]

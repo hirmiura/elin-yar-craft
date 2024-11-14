@@ -73,13 +73,13 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 [*] 防具
   [list]
   [*] arm
-      軽手袋, 厚篭手, 合成篭手, 手袋, 重層篭手, 細工篭手
+      軽手袋, 厚篭手, 合成篭手, 手袋, 重層篭手, 細工篭手, 大篭手
   [*] back
       軽外套, 翼, 外套, 陣羽織, 防護外套, 羽
   [*] foot
       履物, 靴, 重靴, 厚靴, 合成靴, 装甲靴, 大靴
   [*] head
-      兜, 羽帽子, 魔法帽, 騎士兜, 重兜, フェアリーハット, 合金兜, 大兜
+      バケツ, 兜, 羽帽子, 魔法帽, 騎士兜, 重兜, フェアリーハット, 合金兜, 大兜
   [*] torso
       法衣, 胸甲, 服, 軽鎧, 厚鎧, 防護服, 輪鎧, 大鎧, 合成鎧, 防弾服, 綴り鎧, 法王衣, 重層鎧
   [*] waist
@@ -97,5 +97,12 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 [h2]ソース[/h2]
 
 https://github.com/hirmiura/elin-yar-craft
+
+[h2]変更履歴[/h2]
+
+[list]
+[*] 2024-11-15
+レシピを統一しアイテム毎の重さと価値の基本値に応じて必要量を変えるようにした。
+[/list]
 </description>
 </Meta>
