@@ -101,7 +101,7 @@ description = "New feature or request"
 ["Type: Improvement"]
 color = "4db6ac"
 name = "Type: Improvement"
-description = "Improce features which are working"
+description = "Improve features which are working"
 
 ["Type: Modification"]
 color = "4dd0e1"
