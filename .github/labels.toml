@@ -75,7 +75,7 @@ description = "Waiting for working on it"
 
 ["Status: Canceled"]
 color       = "e57373"
-name        = "Status: Available"
+name        = "Status: Canceled"
 description = "Working on it, but canceled"
 
 ["Status: Completed"]
