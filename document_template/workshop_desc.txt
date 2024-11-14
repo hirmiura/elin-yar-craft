@@ -41,8 +41,6 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 
 [h2]製作できる装備[/h2]
 
-現バージョンでは以下の装備が製作できます。
-
 {CraftableList}
 
 [h2]バリアント[/h2]

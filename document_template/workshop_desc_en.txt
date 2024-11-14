@@ -1,57 +1,55 @@
 [h1]Yar Craft[/h1]
 
-装備を製作できるようにします。
+Allows equipment to be manufactured.
 
 [h2]Elin Data Expanded Framework[/h2]
 
-このModの動作にはEDEFWが必須です。
-以下をサブスクライブしてください。
+EDEFW is required for this mod to work.
+Please subscribe to the following
 
 https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
 
-[h2]レシピ[/h2]
+[h2]Recipe[/h2]
 
-低位の装備は最初から習得していますが、高位(内部Lvが10以上)の装備は閃く必要があります。
+Low-level equipment is learned from the beginning, but high-level (internal Lv. 10 or higher) equipment needs to be sparked.
 
-[h2]ゲーム途中からの追加[/h2]
+[h2]Additions from mid-game[/h2]
 
-問題ありません。
+No problem.
 
-[h2]ゲーム途中からの削除[/h2]
+[h2]Deletion from mid-game[/h2]
 
-[b]問題あります。[/b]
-各アイテムは本来の物とは別IDとなっている為です。
-これは素材と作業台を作り分ける為の措置です。
+[b]There is a problem.[/b]
+This is because each item has a different ID from the original one.
+This is done to separate materials and workbenches.
 
-具体的には、作成したアイテムがジャンクに化けます(elonaでいう金塊みたいなもの)。
+Specifically, the items you create will turn into junk (like gold nuggets in ELONA).
 
-[h2]他Modとの競合[/h2]
+[h2]Competing with other mods[/h2]
 
-アイテムデータを独自idで追加しているだけなので、無いはずなのですが……
+I'm just adding item data with my own id, so it shouldn't be there. ......
 
-[url=https://github.com/hirmiura/elin-yar-craft/issues/2]KK With My Sister と併用するとフィートが取得できなくなる[/url]現象が起きます。
+[url=https://github.com/hirmiura/elin-yar-craft/issues/2]When used in conjunction with KK With My Sister, there is a phenomenon that prevents the feat from being retrieved.[/url]
 https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 
-[u][b]Modの読み込み順を KK With My Sister を先にすることで治ります。[/b][/u]
+[u][b]Cured by setting the mod loading order to KK With My Sister first.[/b][/u]
 
 [olist]
 [*] KK With My Sister
 [*] Elin Data Expanded Framework
 [/olist]
 
-[h2]製作できる装備[/h2]
-
-現バージョンでは以下の装備が製作できます。
+[h2]Craftable Equipments]
 
 {CraftableList}
 
-[h2]バリアント[/h2]
+[h2]Variant[/h2]
 
 [list]
-[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3364027181]Yar Craft[/url] オリジナル
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3364027181]Yar Craft[/url] Original
 [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3365224617]Yar Craft 中文版[/url]
 [/list]
 
-[h2]ソース[/h2]
+[h2]Source[/h2]
 
 https://github.com/hirmiura/elin-yar-craft
