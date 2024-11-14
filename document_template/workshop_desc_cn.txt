@@ -1,11 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Meta>
-  <title>Yar Craft 中文版</title>
-  <id>yar_craft_cn</id>
-  <author>Yararezon</author>
-  <loadPriority>100</loadPriority>
-  <version>0.23.20</version>
-  <description>[h1]Yar Craft 中文版[/h1]
+[h1]Yar Craft 中文版[/h1]
 
 允许制造设备。
 
@@ -48,44 +41,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 
 [h2]可生产的装备[/h2]
 
-[list]
-[*] 近战武器
-  [list]
-  [*] axe
-      大斧, 战斧, 手斧, 机械斧
-  [*] blunt
-      大锤, 棍棒, 锤矛
-  [*] dagger
-      菜刀, 忍刀, 海贼刀, 短剑
-  [*] martial
-      爪, 拳套
-  [*] polearm
-      戟, 三叉戟, 长枪
-  [*] scythe
-      大镰, 战镰
-  [*] shield
-      小盾, 圆盾, 盾, 合成盾, 骑士盾, 塔盾
-  [*] staff
-      长棒, 杖
-  [*] sword
-      大剑, 刀, 长剑
-  [/list]
-[*] 裝甲
-  [list]
-  [*] arm
-      轻手套, 厚手套, 合成护手, 多层护手, 重型护手, 高级护手
-  [*] back
-      轻外套, 翼, 外套, 阵羽织, 防护外套, 羽
-  [*] foot
-      鞋子, 靴子, 重靴, 厚靴, 合成靴, 装甲靴, 大靴
-  [*] head
-      头盔, 羽毛帽, 魔法帽, 骑士盔, 重盔, 妖精帽, 合金盔, 大盔
-  [*] torso
-      法衣, 胸甲, 衣服, 轻铠, 厚铠, 防护服, 环甲, 大铠, 合成铠, 防弹服, 链甲, 法王衣, 重型铠
-  [*] waist
-      腰带, 合成腰带, 重型腰带
-  [/list]
-[/list]
+{CraftableList}
 
 [h2]变异[/h2]
 
@@ -97,5 +53,3 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 [h2]原始码[/h2]
 
 https://github.com/hirmiura/elin-yar-craft
-</description>
-</Meta>

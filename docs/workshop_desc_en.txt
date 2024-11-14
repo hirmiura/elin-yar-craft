@@ -1,0 +1,92 @@
+[h1]Yar Craft[/h1]
+
+Allows equipment to be manufactured.
+
+[h2]Elin Data Expanded Framework[/h2]
+
+EDEFW is required for this mod to work.
+Please subscribe to the following
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
+
+[h2]Recipe[/h2]
+
+Low-level equipment is learned from the beginning, but high-level (internal Lv. 10 or higher) equipment needs to be sparked.
+
+[h2]Additions from mid-game[/h2]
+
+No problem.
+
+[h2]Deletion from mid-game[/h2]
+
+[b]There is a problem.[/b]
+This is because each item has a different ID from the original one.
+This is done to separate materials and workbenches.
+
+Specifically, the items you create will turn into junk (like gold nuggets in ELONA).
+
+[h2]Competing with other mods[/h2]
+
+I'm just adding item data with my own id, so it shouldn't be there. ......
+
+[url=https://github.com/hirmiura/elin-yar-craft/issues/2]When used in conjunction with KK With My Sister, there is a phenomenon that prevents the feat from being retrieved.[/url]
+https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
+
+[u][b]Cured by setting the mod loading order to KK With My Sister first.[/b][/u]
+
+[olist]
+[*] KK With My Sister
+[*] Elin Data Expanded Framework
+[/olist]
+
+[h2]Craftable Equipments]
+
+[list]
+[*] Melee
+  [list]
+  [*] axe
+      bardish, battle axe, hand axe, machine axe
+  [*] blunt
+      Mallet, club, mace
+  [*] dagger
+      kitchen knife, wakizashi, scimitar, short sword
+  [*] martial
+      claw, boxing gloves
+  [*] polearm
+      halberd, trident, long spear
+  [*] scythe
+      scythe, war sickle
+  [*] shield
+      small shield, round shield, shield, composite shield, knight shield, tower shield
+  [*] staff
+      long staff, staff
+  [*] sword
+      claymore, katana, long sword
+  [/list]
+[*] Armor
+  [list]
+  [*] arm
+      light gloves, thick gauntlets, composite gauntlets, gloves, plate gauntlets, decorated gloves
+  [*] back
+      light cloak, wing, cloak, battle cloak, armored cloak, feather
+  [*] foot
+      shoes, boots, heavy boots, tight boots, composite boots, armored boots
+  [*] head
+      helm, feather hat, wizard hat, knight helm, heavy helm, fairy hat, composite helm, great helm
+  [*] torso
+      robe, breastplate, shirt, light mail, banded mail, coat, ring mail, great armor, composite mail, bulletproof jacket, chain mail, pope robe, plate mail
+  [*] waist
+      girdle, composite girdle, plate girdle
+  [/list]
+[/list]
+
+[h2]Variant[/h2]
+
+[list]
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3364027181]Yar Craft[/url] Original
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3365224617]Yar Craft 中文版[/url]
+[/list]
+
+[h2]Source[/h2]
+
+https://github.com/hirmiura/elin-yar-craft

@@ -10,6 +10,7 @@ F_CN_Thing	:= CN_Thing.xlsx
 E_YarCraft	:= poetry run src/elin_yar_craft/yarcraft.py
 E_UpdateDep	:= poetry run src/elin_yar_craft/update_deprecated.py
 E_Translate	:= poetry run src/elin_yar_craft/translate.py
+E_Document	:= poetry run src/elin_yar_craft/document.py
 
 
 #==============================================================================
@@ -97,11 +98,20 @@ Yar_Craft_CN/%.csv: Yar_Craft/%.csv
 
 
 #==============================================================================
+# ドキュメント生成
+#==============================================================================
+.PHONY: docs
+docs: ## ドキュメントを生成します
+docs:
+	$(E_Document)
+
+
+#==============================================================================
 # ビルド
 #==============================================================================
 .PHONY: build
 build: ## ビルドします
-build: generate generate_cn
+build: generate generate_cn docs
 
 
 #==============================================================================
@@ -115,13 +125,16 @@ all: check build
 #==============================================================================
 # クリーンアップ
 #==============================================================================
-.PHONY: clean clean-cn clean-all
+.PHONY: clean clean-cn clean-docs clean-all
 clean: ## クリーンアップします
-clean: clean-cn
+clean: clean-cn clean-docs
 	rm -f Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
 
 clean-cn:
 	rm -f Yar_Craft_CN/*.csv
+
+clean-docs:
+	rm -f docs/*.txt
 
 clean-all: ## 生成した全てのファイルを削除します
 clean-all: clean
