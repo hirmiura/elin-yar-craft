@@ -39,7 +39,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 [*] Elin Data Expanded Framework
 [/olist]
 
-[h2]Craftable Equipments[/h2]
+[h2]Craftable Equipments]
 
 [list]
 [*] Melee
