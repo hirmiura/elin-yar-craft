@@ -52,7 +52,7 @@
 `{variant}/{int((w:=int(line['weight']))/500+1)},texture/{int(w/1000+1)},string/{int(w/2000+1)},needle/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)}`
 
 - arm  
-軽手袋, 厚篭手, 合成篭手, 手袋, 重層篭手, 細工篭手
+軽手袋, 厚篭手, 合成篭手, 手袋, 重層篭手, 細工篭手, 大篭手
 - back  
 軽外套, 翼, 外套, 陣羽織, 防護外套, 羽
 - foot  
