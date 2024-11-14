@@ -1,6 +1,6 @@
 ##### 共通設定 #####
 [DEFAULT.filter]
-id       = "^(?!YarCraft)"
+id       = "^(?!YarCraft|weapon_anvil)"
 naming   = "m"
 category = "^(axe|blunt|dagger|martial|polearm|scythe|shield|staff|sword)$"
 quality  = "0"
