@@ -23,11 +23,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # https://docs.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#using-a-specific-python-version
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
@@ -58,7 +58,7 @@ jobs:
 
       - name: Commit definition file after fetch
         if: contains(github.event_name, 'push')
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Sync definition file with existing labels"
           file_pattern: .github/labels.toml
@@ -75,7 +75,7 @@ jobs:
 
       - name: Create Pull Request
         if: contains(github.event_name, 'label') || contains(github.event_name, 'workflow_dispatch')
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Fetch definition file from existing labels"
