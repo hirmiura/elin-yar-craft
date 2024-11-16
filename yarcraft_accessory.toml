@@ -15,10 +15,74 @@ tierGroup = "metal"
 recipeKey = "{'*' if int(line['LV']) <= 10 else ''}"
 tag       = "{line['tag'] + ',noDrop,noShop' if line['tag'] else 'noDrop,noShop'}"
 
-##### 個別設定 #####
+##### 個別設定 - 通常品 #####
 [normal]
 recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem,money/{int((v:=int(line['value']))/50+1)}"
 
 ["speed and aurora"]
+filter.id         = "^ring_(speed|aurora)$"
 filter.naming     = ""
 recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem/2,money/{int((v:=int(line['value']))/50+1)},money2/{int(v/5000+1)}"
+
+##### 個別設定 - 高品質 #####
+["normal q1"]
+recipe.name_JP    = "{line['name_JP']} 高品質"
+recipe.name       = "{line['name']} good quality"
+recipe.id.suffix  = "_q1"
+recipe.LV         = "{int(line['LV'])+10}"
+recipe.recipeKey  = ""
+recipe.quality    = "1"
+recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem,money/{int((v:=int(line['value']))/50+1)},plat/1"
+
+["speed and aurora q1"]
+filter.id         = "^ring_(speed|aurora)$"
+filter.naming     = ""
+recipe.name_JP    = "{line['name_JP']} 高品質"
+recipe.name       = "{line['name']} good quality"
+recipe.id.suffix  = "_q1"
+recipe.LV         = "{int(line['LV'])+10}"
+recipe.recipeKey  = ""
+recipe.quality    = "1"
+recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem/2,money/{int((v:=int(line['value']))/50+1)},money2/{int(v/5000+1)},plat/1"
+
+##### 個別設定 - 奇跡 #####
+["normal q2"]
+recipe.name_JP    = "{line['name_JP']} 奇跡"
+recipe.name       = "{line['name']} good quality"
+recipe.id.suffix  = "_q2"
+recipe.LV         = "{int(line['LV'])+30}"
+recipe.recipeKey  = ""
+recipe.quality    = "2"
+recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem,money/{int((v:=int(line['value']))/50+1)},plat/5"
+
+["speed and aurora q2"]
+filter.id         = "^ring_(speed|aurora)$"
+filter.naming     = ""
+recipe.name_JP    = "{line['name_JP']} 奇跡"
+recipe.name       = "{line['name']} good quality"
+recipe.id.suffix  = "_q2"
+recipe.LV         = "{int(line['LV'])+30}"
+recipe.recipeKey  = ""
+recipe.quality    = "2"
+recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem/2,money/{int((v:=int(line['value']))/50+1)},money2/{int(v/5000+1)},plat/5"
+
+##### 個別設定 - 神器 #####
+["normal q3"]
+recipe.name_JP    = "{line['name_JP']} 神器"
+recipe.name       = "{line['name']} good quality"
+recipe.id.suffix  = "_q3"
+recipe.LV         = "{int(line['LV'])+50}"
+recipe.recipeKey  = ""
+recipe.quality    = "3"
+recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem,money/{int((v:=int(line['value']))/50+1)},plat/10"
+
+["speed and aurora q3"]
+filter.id         = "^ring_(speed|aurora)$"
+filter.naming     = ""
+recipe.name_JP    = "{line['name_JP']} 神器"
+recipe.name       = "{line['name']} good quality"
+recipe.id.suffix  = "_q3"
+recipe.LV         = "{int(line['LV'])+50}"
+recipe.recipeKey  = ""
+recipe.quality    = "3"
+recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem/2,money/{int((v:=int(line['value']))/50+1)},money2/{int(v/5000+1)},plat/10"
