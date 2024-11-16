@@ -92,8 +92,9 @@ check_link_elin:
 # 生成
 #==============================================================================
 .PHONY: generate update_deprecated
+OutputCsv := $(addprefix Yar_Craft/,EDEFW_Thing_YarCraft_Weapon.csv EDEFW_Thing_YarCraft_Armor.csv EDEFW_Thing_YarCraft_Accessory.csv)
 generate: ## csvファイルを生成します
-generate: Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv update_deprecated
+generate: $(OutputCsv) update_deprecated
 
 Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv: $(D_ElinSrc)/things.csv yarcraft_weapon.toml
 	$(E_YarCraft) -i $< -o $@ -c yarcraft_weapon.toml
@@ -101,17 +102,22 @@ Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv: $(D_ElinSrc)/things.csv yarcraft_weap
 Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv: $(D_ElinSrc)/things.csv yarcraft_armor.toml
 	$(E_YarCraft) -i $< -o $@ -c yarcraft_armor.toml
 
-update_deprecated: Yar_Craft/EDEFW_Thing_YarCraft_deprecated.csv Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
+Yar_Craft/EDEFW_Thing_YarCraft_Accessory.csv: $(D_ElinSrc)/things.csv yarcraft_accessory.toml
+	$(E_YarCraft) -i $< -o $@ -c yarcraft_accessory.toml
+
+update_deprecated: Yar_Craft/EDEFW_Thing_YarCraft_deprecated.csv $(OutputCsv)
 	$(E_UpdateDep) $< Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv
 	$(E_UpdateDep) $< Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
+	$(E_UpdateDep) $< Yar_Craft/EDEFW_Thing_YarCraft_Accessory.csv
 
 
 #==============================================================================
 # 生成(中国語版)
 #==============================================================================
 .PHONY: generate_cn
+OutputCsvCN := $(patsubst Yar_Craft/%,Yar_Craft_CN/%,$(OutputCsv)) Yar_Craft_CN/EDEFW_Thing_YarCraft_deprecated.csv
 generate_cn: ## 中国語版csvファイルを生成します
-generate_cn: Yar_Craft_CN/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft_CN/EDEFW_Thing_YarCraft_Armor.csv Yar_Craft_CN/EDEFW_Thing_YarCraft_deprecated.csv
+generate_cn: $(OutputCsvCN)
 
 Yar_Craft_CN/%.csv: Yar_Craft/%.csv
 	$(E_Translate) -i $< -o $@ -t CN_Thing.xlsx
