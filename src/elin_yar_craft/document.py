@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -109,7 +110,11 @@ def get_categorized_data(data: list[dict[str, Any]], key: str) -> dict[str, list
     result = {}
     for category in categories:
         list_by_key: list[str] = [
-            k for d in data if d.get("category") == category and (k := d.get(key))
+            k
+            for d in data
+            if d.get("category") == category
+            and (k := d.get(key))
+            and re.search(r"_q\d$", str(d.get("id")))
         ]
         # 重複を削除
         list_by_key = list(dict.fromkeys(list_by_key))
