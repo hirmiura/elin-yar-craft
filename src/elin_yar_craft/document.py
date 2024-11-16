@@ -114,7 +114,7 @@ def get_categorized_data(data: list[dict[str, Any]], key: str) -> dict[str, list
             for d in data
             if d.get("category") == category
             and (k := d.get(key))
-            and re.search(r"_q\d$", str(d.get("id")))
+            and not re.search(r"_q\d$", str(d.get("id")))
         ]
         # 重複を削除
         list_by_key = list(dict.fromkeys(list_by_key))
