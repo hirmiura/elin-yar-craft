@@ -23,12 +23,13 @@ public class Plugin : BaseUnityPlugin
 {
     internal static ManualLogSource Loggger;
     public static Regex Rgx { get; private set; }
+    public static Regex RgxUnderbar { get; private set; }
     public static string Replacement { get; private set; }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static string Replace(string input)
     {
-        return Plugin.Rgx.Replace(input, Plugin.Replacement);
+        return Plugin.RgxUnderbar.Replace(Plugin.Rgx.Replace(input, Plugin.Replacement), "");
     }
 
     private void Awake()
@@ -41,6 +42,7 @@ public class Plugin : BaseUnityPlugin
         //lang=regex
         var pattern = configFile.Bind("General", "Pattern", @"^YarCraft_(?<id>.+?)(_(wood|stone|metal|cloth)?)?(_q\d)?$", "正規表現パターン").Value;
         Plugin.Rgx = new Regex(pattern, RegexOptions.Compiled);
+        Plugin.RgxUnderbar = new Regex("_+$", RegexOptions.Compiled);
         //lang=regex
         Plugin.Replacement = configFile.Bind("General", "Replace", @"${id}", "正規表現置換").Value;
 
