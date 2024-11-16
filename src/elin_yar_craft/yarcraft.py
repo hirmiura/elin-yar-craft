@@ -74,15 +74,16 @@ class CraftConf(BaseModel):
         return self
 
     def check_and_create(self, line: dict[str, Any]) -> list[dict[str, Any]]:
+        result = []
         if len(self.rules):
             for rule_name in self.rules:
                 if self.check(line, rule_name):
-                    return self.create_variant(line, rule_name)
+                    result.extend(self.create_variant(line, rule_name))
         else:
             # デフォルトルールのみの場合
             if self.check(line, "", True):
                 return self.create_variant(line, "", True)
-        return []
+        return result
 
     def check(self, line: dict[str, Any], rule_name: str, only_default: bool = False) -> bool:
         assert only_default or rule_name in self.rules

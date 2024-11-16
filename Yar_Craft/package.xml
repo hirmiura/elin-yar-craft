@@ -4,7 +4,7 @@
   <id>yar_craft</id>
   <author>Yararezon</author>
   <loadPriority>100</loadPriority>
-  <version>0.23.28-0.2.1</version>
+  <version>0.23.29-0.2.2</version>
   <description>[h1]Yar Craft[/h1]
 
 装備を製作できるようにします。
@@ -109,6 +109,8 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]変更履歴[/h2]
 
 [list]
+[*] 0.2.2
+高品質、奇跡、神器を作れるようにした
 [*] 0.2.1
 アクセサリを追加した
 [*] 0.2.0
@@ -118,6 +120,5 @@ https://github.com/hirmiura/elin-yar-craft
 [*] 2024-11-12
 スクリプトによる生成に切り替えました。
 旧データは退避しているので後方互換は問題ないはずです。
-[/list]
-</description>
+[/list]</description>
 </Meta>
