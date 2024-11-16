@@ -25,6 +25,7 @@ recipe.name_JP    = "{line['name_JP']} 高品質"
 recipe.name       = "{line['name']} good quality"
 recipe.id.suffix  = [ "wood_q1", "stone_q1", "metal_q1", "cloth_q1" ]
 recipe.LV         = "{int(line['LV'])+10}"
+recipe.recipeKey  = ""
 recipe.quality    = "1"
 recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},resin/{int(w/1000+1)},string/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)},plat/1"
 
@@ -34,6 +35,7 @@ recipe.name_JP    = "{line['name_JP']} 奇跡"
 recipe.name       = "{line['name']} miracle quality"
 recipe.id.suffix  = [ "wood_q2", "stone_q2", "metal_q2", "cloth_q2" ]
 recipe.LV         = "{int(line['LV'])+30}"
+recipe.recipeKey  = ""
 recipe.quality    = "2"
 recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},resin/{int(w/1000+1)},string/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)},plat/5"
 
@@ -43,5 +45,6 @@ recipe.name_JP    = "{line['name_JP']} 神器"
 recipe.name       = "{line['name']} godly quality"
 recipe.id.suffix  = [ "wood_q3", "stone_q3", "metal_q3", "cloth_q3" ]
 recipe.LV         = "{int(line['LV'])+50}"
+recipe.recipeKey  = ""
 recipe.quality    = "3"
 recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},resin/{int(w/1000+1)},string/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)},plat/10"
