@@ -82,9 +82,9 @@ class TransThing(BaseModel):
         self, line: dict[str, Any], pattern: str = r"^YarCraft_{id}(_.+)?"
     ) -> dict[str, Any] | None:
         for trans in self.trans_list:
-            if (  # nameが一致するか
-                line[TransThing.key_name].casefold()
-                == str(trans[TransThing.key_name_EN]).casefold()
+            if (  # nameが部分一致するか
+                str(trans[TransThing.key_name_EN]).casefold()
+                in line[TransThing.key_name].casefold()
             ):
                 # idのパターンが一致するか
                 pat = pattern.format(id=trans[TransThing.key_id])
@@ -99,6 +99,14 @@ class TransThing(BaseModel):
                         TransThing.key_roomName,
                     ]:
                         new[key] = trans[key]
+                        if key == TransThing.key_name:
+                            if re.search("_q1$", new[TransThing.key_id]):
+                                new[key] += " 优质品"
+                            elif re.search("_q2$", new[TransThing.key_id]):
+                                new[key] += " 奇迹"
+                            elif re.search("_q3$", new[TransThing.key_id]):
+                                new[key] += " 神器"
+
                     return new
         return None
 
