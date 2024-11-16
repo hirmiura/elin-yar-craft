@@ -118,11 +118,24 @@ Yar_Craft_CN/%.csv: Yar_Craft/%.csv
 
 
 #==============================================================================
+# バージョンをアップデート
+#==============================================================================
+.PHONY: update_version
+update_version: ## バージョンをアップデートします
+update_version:
+	$(eval ver := `cat version.txt`)
+	sed -i -r "s|(\[assembly: Assembly(File)?Version\(\")(.+)(\"\)\])|\1$(ver)\4|g" src/csharp/Properties/AssemblyInfo.cs
+	sed -i -r "s|(PLUGIN_VERSION\s*=\s*\")(.+)(\";)|\1$(ver)\3|g" src/csharp/Plugin.cs
+	sed -i -r "s|(<version>).*(</version>)|\1$(ver)\2|g" Yar_Craft/package.xml
+	sed -i -r "s|(<version>).*(</version>)|\1$(ver)\2|g" Yar_Craft_CN/package.xml
+
+
+#==============================================================================
 # DLL生成
 #==============================================================================
 .PHONY: dll
 dll: ## DLLを生成します
-dll:
+dll: update_version
 	dotnet build -c Release
 	cp -f src/csharp/bin/Release/YarCraft.dll Yar_Craft
 	cp -f src/csharp/bin/Release/YarCraft.dll Yar_Craft_CN
@@ -156,9 +169,9 @@ all: check build
 #==============================================================================
 # クリーンアップ
 #==============================================================================
-.PHONY: clean clean-cn clean-docs clean-all
+.PHONY: clean clean-cn clean-docs clean-dll clean-all
 clean: ## クリーンアップします
-clean: clean-cn clean-docs
+clean: clean-cn clean-docs clean-dll
 	rm -f Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
 
 clean-cn:
@@ -166,6 +179,10 @@ clean-cn:
 
 clean-docs:
 	rm -f docs/workshop_desc*.txt
+
+clean-dll:
+	dotnet clean -c Debug
+	dotnet clean -c Release
 
 clean-all: ## 生成した全てのファイルを削除します
 clean-all: clean
