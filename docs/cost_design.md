@@ -74,4 +74,4 @@
 結婚指輪, 装飾の指輪, 指輪, 指当て, 合金指輪
 - ring (special)
 スピードの指輪, オーロラリング  
-`{variant}/{int((w:=int(line['weight']))/20+1)},gem/{int(w/50+1)},money/{int((v:=int(line['value']))/50+1),money2/{int((v:=int(line['value']))/10+1)}`
+`{variant}/{int((w:=int(line['weight']))/20+1)},gem/{int(w/50+1)},money/{int((v:=int(line['value']))/50+1)},money2/{int(v/10+1)}`
