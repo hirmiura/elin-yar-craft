@@ -19,7 +19,8 @@ No problem.
 
 [h2]Deletion from mid-game[/h2]
 
-[b]There is a problem.[/b]
+There is no problem for items created after version 0.2.0.
+There is a problem with items created before that.
 This is because each item has a different ID from the original one.
 This is done to separate materials and workbenches.
 
@@ -57,6 +58,13 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]Changelog[/h2]
 
 [list]
+[*] 0.2.1
+Add accessories
+[*] 0.2.0
+Modified the id of created items so that they do not disappear even when the mod is removed.
 [*] 2024-11-15
 The recipes were standardized to change the required amount according to the basic values of weight and value for each item.
+[*] 2024-11-12
+We have switched to script generation.
+The old data has been saved, so backward compatibility should not be a problem.
 [/list]

@@ -1,0 +1,24 @@
+##### 共通設定 #####
+[DEFAULT.filter]
+id       = "^(?!YarCraft|YB_)"
+naming   = "m"
+category = "^(amulet|ring)$"
+quality  = "0"
+
+[DEFAULT.recipe]
+id.prefix = "YarCraft"
+id.suffix = ""
+variant   = [ "" ]
+factory   = "factory_accessory"
+defMat    = "gold"
+tierGroup = "metal"
+recipeKey = "{'*' if int(line['LV']) <= 10 else ''}"
+tag       = "{line['tag'] + ',noDrop,noShop' if line['tag'] else 'noDrop,noShop'}"
+
+##### 個別設定 #####
+[normal]
+recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem,money/{int((v:=int(line['value']))/50+1)}"
+
+["speed and aurora"]
+filter.naming     = ""
+recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem/2,money/{int((v:=int(line['value']))/50+1)},money2/{int(v/5000+1)}"

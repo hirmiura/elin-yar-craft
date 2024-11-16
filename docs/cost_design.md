@@ -63,3 +63,15 @@
 法衣, 胸甲, 服, 軽鎧, 厚鎧, 防護服, 輪鎧, 大鎧, 合成鎧, 防弾服, 綴り鎧, 法王衣, 重層鎧
 - waist  
 腰当, 合成腰当, 重層腰当
+
+## アクセサリ
+
+`plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem,money/{int((v:=int(line['value']))/50+1)}`
+
+- amulet  
+結婚首輪, 装飾首輪, ネックレス, 細工首輪, お守り, 首当て, 護符, ペリドット
+- ring  
+結婚指輪, 装飾の指輪, 指輪, 指当て, 合金指輪
+- ring (special)
+スピードの指輪, オーロラリング  
+`plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem/2,money/{int((v:=int(line['value']))/50+1)},money2/{int(v/5000+1)}`
