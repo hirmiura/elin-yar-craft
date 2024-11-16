@@ -130,10 +130,11 @@ Yar_Craft_CN/%.csv: Yar_Craft/%.csv
 update_version: ## バージョンをアップデートします
 update_version:
 	$(eval ver := `cat version.txt`)
+	$(eval verElin := `cat versionElin.txt`)
 	sed -i -r "s|(\[assembly: Assembly(File)?Version\(\")(.+)(\"\)\])|\1$(ver)\4|g" src/csharp/Properties/AssemblyInfo.cs
 	sed -i -r "s|(PLUGIN_VERSION\s*=\s*\")(.+)(\";)|\1$(ver)\3|g" src/csharp/Plugin.cs
-	sed -i -r "s|(<version>).*(</version>)|\1$(ver)\2|g" Yar_Craft/package.xml
-	sed -i -r "s|(<version>).*(</version>)|\1$(ver)\2|g" Yar_Craft_CN/package.xml
+	sed -i -r "s|(<version>).*(</version>)|\1$(verElin)-$(ver)\2|g" Yar_Craft/package.xml
+	sed -i -r "s|(<version>).*(</version>)|\1$(verElin)-$(ver)\2|g" Yar_Craft_CN/package.xml
 
 
 #==============================================================================
