@@ -78,34 +78,31 @@ class TransThing(BaseModel):
             self.trans_list.append(row_dic)
         return self
 
-    def translate(
-        self, line: dict[str, Any], pattern: str = r"^YarCraft_{id}(_.+)?"
-    ) -> dict[str, Any] | None:
+    def translate(self, line: dict[str, Any]) -> dict[str, Any] | None:
         for trans in self.trans_list:
-            if (  # nameが部分一致するか
-                str(trans[TransThing.key_name_EN]).casefold()
-                in line[TransThing.key_name].casefold()
+            trans_id: str = trans[TransThing.key_id]
+            line_id: str = line[TransThing.key_id]
+            pure_line_id = re.sub(r"^YarCraft_", "", line_id)
+            pure_line_id = re.sub(r"_(wood|stone|metal|cloth)?(_q\d)?$", "", pure_line_id)
+            if (  # idが一致するか
+                trans_id.casefold() == pure_line_id.casefold()
             ):
-                # idのパターンが一致するか
-                pat = pattern.format(id=trans[TransThing.key_id])
-                mat = re.search(pat, line["id"])
-                if mat:
-                    new = copy.deepcopy(line)
-                    for key in [
-                        TransThing.key_name,
-                        TransThing.key_detail,
-                        TransThing.key_unit,
-                        TransThing.key_unknown,
-                        TransThing.key_roomName,
-                    ]:
-                        new[key] = trans[key]
-                        if key == TransThing.key_name:
-                            if re.search("_q1$", new[TransThing.key_id]):
-                                new[key] += " 优质品"
-                            elif re.search("_q2$", new[TransThing.key_id]):
-                                new[key] += " 奇迹"
-                            elif re.search("_q3$", new[TransThing.key_id]):
-                                new[key] += " 神器"
+                new = copy.deepcopy(line)
+                for key in [
+                    TransThing.key_name,
+                    TransThing.key_detail,
+                    TransThing.key_unit,
+                    TransThing.key_unknown,
+                    TransThing.key_roomName,
+                ]:
+                    new[key] = trans[key]
+                    if key == TransThing.key_name:
+                        if re.search("_q1$", new[TransThing.key_id]):
+                            new[key] += " 优质品"
+                        elif re.search("_q2$", new[TransThing.key_id]):
+                            new[key] += " 奇迹"
+                        elif re.search("_q3$", new[TransThing.key_id]):
+                            new[key] += " 神器"
 
                     return new
         return None
