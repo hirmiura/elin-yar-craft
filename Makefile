@@ -155,6 +155,8 @@ dll: update_version
 docs: ## ドキュメントを生成します
 docs:
 	$(E_Document)
+	xq-python -ix --xml-dtd ".Meta.description|=\"$$(< docs/workshop_desc.txt)\"" Yar_Craft/package.xml
+	xq-python -ix --xml-dtd ".Meta.description|=\"$$(< docs/workshop_desc_cn.txt)\"" Yar_Craft_CN/package.xml
 
 
 #==============================================================================
