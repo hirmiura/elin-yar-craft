@@ -655,6 +655,9 @@ Mod_Slot/
 # Elin_source へのリンク/ディレクトリ
 ElinSrc/
 ElinSrc
+# Elin へのリンク/ディレクトリ
+ElinHome/
+ElinHome
 
 # 翻訳に使うThing.xlsx
 CN_Thing.xlsx

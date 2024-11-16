@@ -6,6 +6,7 @@ SHELL := /bin/bash
 # 各種ディレクトリ/ファイル
 D_ElinSrc	:= ElinSrc
 F_CN_Thing	:= CN_Thing.xlsx
+D_ElinHome	:= ElinHome
 # 実行ファイル
 E_YarCraft	:= poetry run src/elin_yar_craft/yarcraft.py
 E_UpdateDep	:= poetry run src/elin_yar_craft/update_deprecated.py
@@ -26,7 +27,7 @@ include Help.mk
 #==============================================================================
 .PHONY: check
 check: ## 事前にチェック項目を確認します
-check: check_link check_link_cn
+check: check_link check_link_cn check_link_elin
 
 
 #==============================================================================
@@ -64,6 +65,25 @@ check_link_cn:
 	else \
 		echo -e '    \a$(CC_BrRed)ERROR: "$(F_CN_Thing)" に "Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsx" へのリンクを張って下さい$(CC_Reset)' ; \
 		echo -e '    $(CC_BrRed)例: ln -s "/mnt/c/SteamLibrary/steamapps/common/Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsx" $(F_CN_Thing)$(CC_Reset)' ; \
+		exit 1 ; \
+	fi
+
+
+#==============================================================================
+# Elin へのリンク/ディレクトリを確認
+#==============================================================================
+.PHONY: check_link_elin
+check_link_elin: ## Elinへのリンク/ディレクトリを確認します
+check_link_elin:
+	@echo -e '$(CC_BrBlue)========== $@ ==========$(CC_Reset)'
+	@echo '"$(D_ElinHome)" をチェックしています'
+	@if [[ -L $(D_ElinHome) && `readlink $(D_ElinHome) ` ]] ; then \
+		echo -e '    $(CC_BrGreen)SUCCESS$(CC_Reset): リンクです' ; \
+	elif [[ -d $(D_ElinHome) ]] ; then \
+		echo -e '    $(CC_BrGreen)SUCCESS$(CC_Reset): ディレクトリです' ; \
+	else \
+		echo -e '    \a$(CC_BrRed)ERROR: "$(D_ElinHome)" に "Elin" へのリンクを張って下さい$(CC_Reset)' ; \
+		echo -e '    $(CC_BrRed)例: ln -s "/mnt/c/SteamLibrary/steamapps/common/Elin" $(D_ElinHome)$(CC_Reset)' ; \
 		exit 1 ; \
 	fi
 
