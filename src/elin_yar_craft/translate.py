@@ -104,7 +104,7 @@ class TransThing(BaseModel):
                         elif re.search("_q3$", new[TransThing.key_id]):
                             new[key] += " 神器"
 
-                    return new
+                return new
         return None
 
 
