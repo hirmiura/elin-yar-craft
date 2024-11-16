@@ -37,6 +37,7 @@ def craftable_list(dir: str) -> None:
     csv_dir = Path(dir) / "Yar_Craft"
     csv_weapon = csv_dir / "EDEFW_Thing_YarCraft_Weapon.csv"
     csv_armor = csv_dir / "EDEFW_Thing_YarCraft_Armor.csv"
+    csv_accessory = csv_dir / "EDEFW_Thing_YarCraft_Accessory.csv"
     with open(csv_weapon) as f:
         reader_weapon = csv.DictReader(f)
         weapon_list = list(reader_weapon)
@@ -47,20 +48,35 @@ def craftable_list(dir: str) -> None:
         armor_list = list(reader_armor)
     armor_name_dict = get_categorized_data(armor_list, "name")
     armor_name_JP_dict = get_categorized_data(armor_list, "name_JP")  # noqa: N806
+    with open(csv_accessory) as f:
+        reader_accessory = csv.DictReader(f)
+        accessory_list = list(reader_accessory)
+    accessory_name_dict = get_categorized_data(accessory_list, "name")
+    accessory_name_JP_dict = get_categorized_data(accessory_list, "name_JP")  # noqa: N806
     # 日英版を出力
     temp_path = Path(dir) / "document_template"
     doc_path = Path(dir) / "docs"
     desc_file = "workshop_desc.txt"
-    craftable_jp = gen_craftable_list("近接武器", "防具", weapon_name_JP_dict, armor_name_JP_dict)
+    craftable_jp = gen_craftable_list(
+        "近接武器",
+        "防具",
+        "アクセサリ",
+        weapon_name_JP_dict,
+        armor_name_JP_dict,
+        accessory_name_JP_dict,
+    )
     gen_workshop_desc(craftable_jp, temp_path / desc_file, doc_path / desc_file)
     desc_file = "workshop_desc_en.txt"
-    craftable_jp = gen_craftable_list("Melee", "Armor", weapon_name_dict, armor_name_dict)
+    craftable_jp = gen_craftable_list(
+        "Melee", "Armor", "Accessory", weapon_name_dict, armor_name_dict, accessory_name_dict
+    )
     gen_workshop_desc(craftable_jp, temp_path / desc_file, doc_path / desc_file)
 
     # 中文版
     csv_dir = Path(dir) / "Yar_Craft_CN"
     csv_weapon = csv_dir / "EDEFW_Thing_YarCraft_Weapon.csv"
     csv_armor = csv_dir / "EDEFW_Thing_YarCraft_Armor.csv"
+    csv_accessory = csv_dir / "EDEFW_Thing_YarCraft_Accessory.csv"
     with open(csv_weapon) as f:
         reader_weapon = csv.DictReader(f)
         weapon_list = list(reader_weapon)
@@ -69,9 +85,15 @@ def craftable_list(dir: str) -> None:
         reader_armor = csv.DictReader(f)
         armor_list = list(reader_armor)
     armor_name_dict = get_categorized_data(armor_list, "name")
+    with open(csv_accessory) as f:
+        reader_accessory = csv.DictReader(f)
+        accessory_list = list(reader_accessory)
+    accessory_name_dict = get_categorized_data(accessory_list, "name")
     # 中文版を出力
     desc_file = "workshop_desc_cn.txt"
-    craftable_jp = gen_craftable_list("近战武器", "裝甲", weapon_name_dict, armor_name_dict)
+    craftable_jp = gen_craftable_list(
+        "近战武器", "裝甲", "装饰", weapon_name_dict, armor_name_dict, accessory_name_dict
+    )
     gen_workshop_desc(craftable_jp, temp_path / desc_file, doc_path / desc_file)
     return
 
@@ -99,8 +121,10 @@ def get_categorized_data(data: list[dict[str, Any]], key: str) -> dict[str, list
 def gen_craftable_list(
     weapon_title: str,
     armor_title: str,
+    accessory_title: str,
     weapon_dict: dict[str, list[str]],
     armor_dict: dict[str, list[str]],
+    accessory_dict: dict[str, list[str]],
 ) -> str:
     lines: list[str] = ["[list]"]
     lines.append(f"[*] {weapon_title}")
@@ -116,6 +140,16 @@ def gen_craftable_list(
     lines.append(f"[*] {armor_title}")
     last = len(armor_dict) - 1
     for i, (k, v) in enumerate(armor_dict.items()):
+        if i == 0:
+            lines.append("  [list]")
+        lines.append(f"  [*] {k}")
+        items = ", ".join(v)
+        lines.append(f"{' '*6}{items}")
+        if i == last:
+            lines.append("  [/list]")
+    lines.append(f"[*] {accessory_title}")
+    last = len(accessory_dict) - 1
+    for i, (k, v) in enumerate(accessory_dict.items()):
         if i == 0:
             lines.append("  [list]")
         lines.append(f"  [*] {k}")
