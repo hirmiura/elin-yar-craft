@@ -39,7 +39,7 @@ public class Plugin : BaseUnityPlugin
         var directoryName = Path.GetDirectoryName(executingAssembly.Location);
         var configFile = new ConfigFile(Path.Combine(directoryName, "plugin.cfg"), true);
         //lang=regex
-        var pattern = configFile.Bind("General", "Pattern", @"^YarCraft_(?<id>.+?)(_(wood|stone|metal|cloth))?(_q\d)?$", "正規表現パターン").Value;
+        var pattern = configFile.Bind("General", "Pattern", @"^YarCraft_(?<id>.+?)(_(wood|stone|metal|cloth)?)?(_q\d)?$", "正規表現パターン").Value;
         Plugin.Rgx = new Regex(pattern, RegexOptions.Compiled);
         //lang=regex
         Plugin.Replacement = configFile.Bind("General", "Replace", @"${id}", "正規表現置換").Value;
