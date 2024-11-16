@@ -66,7 +66,7 @@
 
 ## アクセサリ
 
-`{variant}/{int((w:=int(line['weight']))/50+1)},gem,money/{int((v:=int(line['value']))/50+1)}`
+`plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem,money/{int((v:=int(line['value']))/50+1)}`
 
 - amulet  
 結婚首輪, 装飾首輪, ネックレス, 細工首輪, お守り, 首当て, 護符, ペリドット
@@ -74,4 +74,4 @@
 結婚指輪, 装飾の指輪, 指輪, 指当て, 合金指輪
 - ring (special)
 スピードの指輪, オーロラリング  
-`{variant}/{int((w:=int(line['weight']))/50+1)},gem/2,money/{int((v:=int(line['value']))/50+1)},money2/{int(v/5000+1)}`
+`plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|texture|bone,gem/2,money/{int((v:=int(line['value']))/50+1)},money2/{int(v/5000+1)}`
