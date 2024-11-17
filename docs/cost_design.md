@@ -1,5 +1,6 @@
 # コストデザイン
 
+- 材料が6種類以上あると制作できない
 - 重さ(weight)に応じて主材料(variant)を増やす
 - 魔石(magic_stone)とルーン(rune)は取り敢えず消す
 - 価値(value)に応じてオレン(money)を費やす
@@ -49,7 +50,7 @@
 
 ## 防具
 
-`{variant}/{int((w:=int(line['weight']))/500+1)},texture/{int(w/1000+1)},string/{int(w/2000+1)},needle/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)}`
+`{variant}/{int((w:=int(line['weight']))/500+1)},texture/{int(w/1000+1)},string/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)}`
 
 - arm  
 軽手袋, 厚篭手, 合成篭手, 手袋, 重層篭手, 細工篭手, 大篭手

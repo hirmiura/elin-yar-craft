@@ -17,7 +17,7 @@ tag       = "{line['tag'] + ',noDrop,noShop' if line['tag'] else 'noDrop,noShop'
 
 ##### 個別設定 - 通常品 #####
 [normal]
-recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},texture/{int(w/1000+1)},string/{int(w/2000+1)},needle/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)}"
+recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},texture/{int(w/1000+1)},string/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)}"
 
 ##### 個別設定 - 高品質 #####
 [q1]
@@ -27,7 +27,7 @@ recipe.id.suffix  = [ "wood_q1", "stone_q1", "metal_q1", "cloth_q1" ]
 recipe.LV         = "{int(line['LV'])+10}"
 recipe.recipeKey  = ""
 recipe.quality    = "1"
-recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},texture/{int(w/1000+1)},string/{int(w/2000+1)},needle/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)},plat/1"
+recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},texture/{int(w/1000+1)},string/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)},plat/1"
 
 ##### 個別設定 - 奇跡 #####
 [q2]
@@ -37,7 +37,7 @@ recipe.id.suffix  = [ "wood_q2", "stone_q2", "metal_q2", "cloth_q2" ]
 recipe.LV         = "{int(line['LV'])+30}"
 recipe.recipeKey  = ""
 recipe.quality    = "2"
-recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},texture/{int(w/1000+1)},string/{int(w/2000+1)},needle/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)},plat/5"
+recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},texture/{int(w/1000+1)},string/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)},plat/5"
 
 ##### 個別設定 - 神器 #####
 [q3]
@@ -47,4 +47,4 @@ recipe.id.suffix  = [ "wood_q3", "stone_q3", "metal_q3", "cloth_q3" ]
 recipe.LV         = "{int(line['LV'])+50}"
 recipe.recipeKey  = ""
 recipe.quality    = "3"
-recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},texture/{int(w/1000+1)},string/{int(w/2000+1)},needle/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)},plat/10"
+recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},texture/{int(w/1000+1)},string/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)},plat/10"
