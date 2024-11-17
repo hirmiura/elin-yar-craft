@@ -55,6 +55,9 @@
       <HintPath>..\..\ElinHome\Elin_Data\Managed\Elin.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Reflex">
+      <HintPath>..\..\ElinHome\Elin_Data\Managed\Reflex.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
