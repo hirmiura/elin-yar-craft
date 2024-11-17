@@ -7,6 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{BB9E0196-ABB8-4CF1-AC9F-4D1C027E0267}</ProjectGuid>
     <OutputType>Library</OutputType>
+    <Platforms>AnyCPU</Platforms>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>YarCraft</RootNamespace>
     <AssemblyName>YarCraft</AssemblyName>
@@ -15,6 +17,7 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <LangVersion>10.0</LangVersion>
+    <Configurations>Debug;Release</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
