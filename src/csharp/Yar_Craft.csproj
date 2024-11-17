@@ -53,12 +53,46 @@
       <HintPath>..\..\ElinHome\Elin_Data\Managed\Elin.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Plugins.ActorSystem">
+      <HintPath>..\..\ElinHome\Elin_Data\Managed\Plugins.ActorSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugins.BaseCore">
+      <HintPath>..\..\ElinHome\Elin_Data\Managed\Plugins.BaseCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugins.Calc">
+      <HintPath>..\..\ElinHome\Elin_Data\Managed\Plugins.Calc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Plugins">
       <HintPath>..\..\ElinHome\Elin_Data\Managed\Plugins.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Plugins.BaseCore">
-      <HintPath>..\..\ElinHome\Elin_Data\Managed\Plugins.BaseCore.dll</HintPath>
+    <Reference Include="Plugins.Dungen">
+      <HintPath>..\..\ElinHome\Elin_Data\Managed\Plugins.Dungen.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Plugins.NameGen">
+      <HintPath>..\..\ElinHome\Elin_Data\Managed\Plugins.NameGen.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Plugins.NoiseSystem">
+      <HintPath>..\..\ElinHome\Elin_Data\Managed\Plugins.NoiseSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Plugins.Sound">
+      <HintPath>..\..\ElinHome\Elin_Data\Managed\Plugins.Sound.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Plugins.Tween">
+      <HintPath>..\..\ElinHome\Elin_Data\Managed\Plugins.Tween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Plugins.UI">
+      <HintPath>..\..\ElinHome\Elin_Data\Managed\Plugins.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Plugins.Util">
+      <HintPath>..\..\ElinHome\Elin_Data\Managed\Plugins.Util.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Reflex">
