@@ -1,11 +1,12 @@
-﻿using BepInEx;
-using BepInEx.Configuration;
-using BepInEx.Logging;
-using HarmonyLib;
 using System.IO;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
+using BepInEx;
+using BepInEx.Configuration;
+using BepInEx.Logging;
+using HarmonyLib;
+using ReflexCLI;
 using UnityEngine;
 
 namespace YarCraft;
@@ -21,7 +22,7 @@ public static class MyPluginInfo
 [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 public class Plugin : BaseUnityPlugin
 {
-    internal static ManualLogSource Loggger;
+    internal static new ManualLogSource Logger;
     public static Regex Rgx { get; private set; }
     public static Regex RgxUnderbar { get; private set; }
     public static string Replacement { get; private set; }
@@ -34,7 +35,7 @@ public class Plugin : BaseUnityPlugin
 
     private void Awake()
     {
-        Loggger = base.Logger;
+        Logger = base.Logger;
         // 設定ファイル
         var executingAssembly = Assembly.GetExecutingAssembly();
         var directoryName = Path.GetDirectoryName(executingAssembly.Location);
@@ -47,6 +48,8 @@ public class Plugin : BaseUnityPlugin
         Plugin.Replacement = configFile.Bind("General", "Replace", @"${id}", "正規表現置換").Value;
 
         Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");  // BepInExとElin両方のログ
+        // コマンドの登録
+        CommandRegistry.assemblies.Add(executingAssembly);
     }
 
     private void Start()
@@ -69,7 +72,7 @@ public class ThingGenPatch
         {
             var new_id = Plugin.Replace(old_id);
             __result.id = new_id;
-            Plugin.Loggger.LogDebug($" ThingGenPatch Postfix: Replace from {old_id} to {new_id}");
+            Plugin.Logger.LogDebug($" ThingGenPatch Postfix: Replace from {old_id} to {new_id}");
         }
         return __result;
     }
