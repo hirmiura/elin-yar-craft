@@ -57,6 +57,7 @@
     </Reference>
     <Reference Include="Reflex">
       <HintPath>..\..\ElinHome\Elin_Data\Managed\Reflex.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
