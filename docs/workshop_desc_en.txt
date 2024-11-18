@@ -103,8 +103,6 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]Changelog[/h2]
 
 [list]
-[*] 0.2.6
-Fix setting of Lightsabers.
 [*] 0.2.5
 Lightsabers added.
 [*] 0.2.4
