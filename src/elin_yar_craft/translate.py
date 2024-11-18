@@ -42,6 +42,10 @@ def procee_args() -> argparse.Namespace:
     parser.add_argument(
         "-t", metavar="TRANS", dest="trans", required=True, help="翻訳に使うThing.xlsxファイル"
     )
+    lang_choices = ["cn"]
+    parser.add_argument(
+        "-l", metavar="LANG", dest="lang", required=True, choices=lang_choices, help="対象の言語"
+    )
     parser.add_argument("--version", action="version", version="%(prog)s 0.1.0")
     args = parser.parse_args()
 
@@ -78,7 +82,7 @@ class TransThing(BaseModel):
             self.trans_list.append(row_dic)
         return self
 
-    def translate(self, line: dict[str, Any]) -> dict[str, Any] | None:
+    def translate(self, lang: str, line: dict[str, Any]) -> dict[str, Any] | None:
         for trans in self.trans_list:
             trans_id: str = trans[TransThing.key_id]
             line_id: str = line[TransThing.key_id]
@@ -97,15 +101,46 @@ class TransThing(BaseModel):
                 ]:
                     new[key] = trans[key]
                     if key == TransThing.key_name:
-                        if re.search("_q1$", new[TransThing.key_id]):
-                            new[key] += " 优质品"
-                        elif re.search("_q2$", new[TransThing.key_id]):
-                            new[key] += " 奇迹"
-                        elif re.search("_q3$", new[TransThing.key_id]):
-                            new[key] += " 神器"
+                        new[key] = get_key_name(lang, new[TransThing.key_id], new[key])
 
                 return new
         return None
+
+
+def get_key_name(lang: str, id: str, name: str) -> str:
+    # 末尾が _q\d か?
+    suffix_match = re.search(r"(_q\d)$", id)
+    if not suffix_match:
+        return name  # マッチしなければリターン
+
+    # ランク分け
+    new_name: str = name + " "
+    match suffix_match[0]:
+        case "_q1":
+            match lang:
+                case "cn":
+                    new_name += "优质品"
+                case _:
+                    new_name += "good"
+        case "_q2":
+            match lang:
+                case "cn":
+                    new_name += "奇迹"
+                case _:
+                    new_name += "miracle"
+        case "_q3":
+            match lang:
+                case "cn":
+                    new_name += "神器"
+                case _:
+                    new_name += "godly"
+        case "_q4":
+            match lang:
+                case "cn":
+                    new_name += "特制"
+                case _:
+                    new_name += "special"
+    return new_name
 
 
 def main() -> int:
@@ -127,7 +162,7 @@ def main() -> int:
     # 生成
     result = []
     for line in data:
-        translated = trans.translate(line)
+        translated = trans.translate(args.lang, line)
         if translated:
             result.append(translated)
         else:
