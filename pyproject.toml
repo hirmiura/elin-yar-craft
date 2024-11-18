@@ -11,7 +11,7 @@ packages    = [ { include = "elin_yar_craft", from = "src" } ]
 python    = "^3.12"
 pydantic  = "^2.9.2"
 mergedeep = "^1.3.4"
-openpyxl = "^3.1.5"
+openpyxl  = "^3.1.5"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -32,16 +32,9 @@ plugins                = [ "pydantic.mypy", "numpy.typing.mypy_plugin" ]
 
 
 [tool.ruff]
-exclude = [
-    ".git",
-    ".mypy_cache",
-    ".pytest_cache",
-    ".ruff_cache",
-    ".venv",
-    ".vscode",
-    "__pycache__",
-]
-line-length = 100
+include        = [ "pyproject.toml", "src/**/*.py" ]
+exclude        = [ "**/node_modules", "**/__pycache__", "**/.*", "**/*.pyi" ]
+line-length    = 100
 target-version = "py312"
 
 
@@ -59,17 +52,9 @@ convention = "google"
 
 
 [tool.pyright]
-include = [ "src" ]
-exclude = [
-    ".git",
-    ".mypy_cache",
-    ".pytest_cache",
-    ".ruff_cache",
-    ".venv",
-    ".vscode",
-    "**/__pycache__",
-]
-pythonVersion = "3.12"
+include        = [ "src" ]
+exclude        = [ "**/node_modules", "**/__pycache__", "**/.*", "**/*.pyi" ]
+pythonVersion  = "3.12"
 pythonPlatform = "Linux"
 
 
