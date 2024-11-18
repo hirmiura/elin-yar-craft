@@ -4,7 +4,7 @@
   <id>yar_craft_cn</id>
   <author>Yararezon</author>
   <loadPriority>100</loadPriority>
-  <version>0.23.29-0.2.3</version>
+  <version>0.23.29-0.2.4</version>
   <description>[h1]Yar Craft 中文版[/h1]
 
 允许制造设备。
@@ -109,6 +109,8 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]修订历史[/h2]
 
 [list]
+[*] 0.2.4
+添加了控制台命令 “YarCraftCleanID ”以删除旧 ID。
 [*] 0.2.3
 无法制作配料超过 6 种的食谱，这一问题已得到纠正。
 [*] 0.2.2

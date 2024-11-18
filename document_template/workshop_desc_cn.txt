@@ -58,6 +58,8 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]修订历史[/h2]
 
 [list]
+[*] 0.2.4
+添加了控制台命令 “YarCraftCleanID ”以删除旧 ID。
 [*] 0.2.3
 无法制作配料超过 6 种的食谱，这一问题已得到纠正。
 [*] 0.2.2
