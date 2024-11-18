@@ -22,7 +22,13 @@ public static class Console
         var message = new List<string>(CompleteMessage);
 
         // 全カードを走査(たぶん)
-        var result = Walker.WalkAllCard(c => (c.id, IdReplacer.Clean(c.id)));
+        var result = Walker.WalkAllCard(c =>
+        {
+            var oldId = c.id;
+            var newId = IdReplacer.Clean(c.id);
+            c.id = newId;
+            return (oldId, newId);
+        });
         result.Sort();
         // デバッグ用に出力
         var file = Path.Combine(Plugin.ModDirectory, DebugFile);
