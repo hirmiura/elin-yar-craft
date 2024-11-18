@@ -54,7 +54,7 @@ jobs:
           GH_REPO: ${{ github.repository }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NUMBER: ${{ github.event.number }}
-          RM_LABELS: "Status: Available"
+          RM_LABELS: "Status: Available,Status: In Progress,Status: Inavtive,Status: Pending"
           AD_LABELS: "Status: Completed"
 
       # イシューがクローズ時にラベルを貼る
@@ -69,5 +69,5 @@ jobs:
           GH_REPO: ${{ github.repository }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NUMBER: ${{ github.event.issue.number }}
-          RM_LABELS: "Status: Available"
+          RM_LABELS: "Status: Available,Status: In Progress,Status: Inavtive,Status: Pending"
           AD_LABELS: "Status: Completed"
