@@ -38,6 +38,7 @@ def craftable_list(dir: str) -> None:
     assert dir
     jp_dir = Path(dir) / "Yar_Craft"
     cn_dir = Path(dir) / "Yar_Craft_CN"
+    zhtw_dir = Path(dir) / "Yar_Craft_ZHTW"
     csv_weapon = "EDEFW_Thing_YarCraft_Weapon.csv"
     csv_armor = "EDEFW_Thing_YarCraft_Armor.csv"
     csv_accessory = "EDEFW_Thing_YarCraft_Accessory.csv"
@@ -62,16 +63,28 @@ def craftable_list(dir: str) -> None:
     )
     gen_workshop_desc(craftable_jp, temp_path / desc_file_en, doc_path / desc_file_en)
 
-    # 中文版
+    # 简体字版
     weapon_name_dict, _ = get_name_dict(cn_dir / csv_weapon)
     armor_name_dict, _ = get_name_dict(cn_dir / csv_armor)
     accessory_name_dict, _ = get_name_dict(cn_dir / csv_accessory)
-    # 中文版を出力
+    # 简体字版を出力
     desc_file_cn = "workshop_desc_cn.txt"
     craftable_cn = gen_craftable_list(
         ["近战武器", "裝甲", "装饰"], [weapon_name_dict, armor_name_dict, accessory_name_dict]
     )
     gen_workshop_desc(craftable_cn, temp_path / desc_file_cn, doc_path / desc_file_cn)
+
+    # 繁體字版
+    weapon_name_dict, _ = get_name_dict(zhtw_dir / csv_weapon)
+    armor_name_dict, _ = get_name_dict(zhtw_dir / csv_armor)
+    accessory_name_dict, _ = get_name_dict(zhtw_dir / csv_accessory)
+    # 繁體字版を出力
+    desc_file_zhtw = "workshop_desc_zhtw.txt"
+    craftable_zhtw = gen_craftable_list(
+        ["近戰武器", "裝甲", "裝飾"], [weapon_name_dict, armor_name_dict, accessory_name_dict]
+    )
+    gen_workshop_desc(craftable_zhtw, temp_path / desc_file_zhtw, doc_path / desc_file_zhtw)
+
     return
 
 
