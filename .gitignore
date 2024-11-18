@@ -661,6 +661,7 @@ ElinHome
 
 # 翻訳に使うThing.xlsx
 CN_Thing.xlsx
+ZHTW_Thing.xlsx
 
 # テスト用の一時ファイル
 test.csv
