@@ -33,11 +33,13 @@ public static class IdReplacer
     public static string CleanV1(string id)
     {
         if (!FirstMatchV1.IsMatch(id)) return id;
+        Plugin.Logger.LogDebug($"IdReplacer match V1: {id}");
         return CleanUtil(id, RuleV1);
     }
     public static string CleanV2(string id)
     {
         if (!FirstMatchV2.IsMatch(id)) return id;
+        Plugin.Logger.LogDebug($"IdReplacer match V2: {id}");
         return CleanUtil(id, RuleV2);
     }
 
