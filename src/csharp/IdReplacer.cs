@@ -19,7 +19,7 @@ public static class IdReplacer
         new(@"_YarCraft.*$", RegexOptions.Compiled),
     ];
     public static (Regex, string)[] RuleException = [
-        (new(@"^(ring|amulet)_of_(fire_cold|music)$", RegexOptions.Compiled), @"\1_decorative"),
+        (new(@"^(ring|amulet)_of_(fire_cold|music)$", RegexOptions.Compiled), @"$1_decorative"),
     ];
 
     public static string Clean(string id)
