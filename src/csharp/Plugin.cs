@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+// Copyright 2024 hirmiura (https://github.com/hirmiura)
 using System.IO;
 using System.Reflection;
 using BepInEx;
