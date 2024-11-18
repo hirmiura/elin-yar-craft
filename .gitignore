@@ -665,3 +665,4 @@ CN_Thing.xlsx
 # テスト用の一時ファイル
 test.csv
 test.toml
+debug.txt
