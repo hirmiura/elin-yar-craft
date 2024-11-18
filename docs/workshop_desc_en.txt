@@ -102,6 +102,8 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]Changelog[/h2]
 
 [list]
+[*] 0.2.4
+Added console command “YarCraftCleanID” to remove old id.
 [*] 0.2.3
 Recipes with more than 6 ingredients could not be crafted, so this has been corrected.
 [*] 0.2.2
