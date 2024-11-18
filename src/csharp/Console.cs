@@ -1,4 +1,8 @@
+// SPDX-License-Identifier: MIT
+// Copyright 2024 hirmiura (https://github.com/hirmiura)
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using ReflexCLI.Attributes;
 
 namespace YarCraft;
@@ -6,7 +10,8 @@ namespace YarCraft;
 [ConsoleCommandClassCustomizer("")]
 public static class Console
 {
-    public static readonly string[] completeMessage = {
+    public static string DebugFile = "debug.txt";
+    public static readonly string[] CompleteMessage = {
             "Completed the clean up of IDs related Yar Craft.",
             "Yar Craft に関連するIDの浄化が完了しました"
         };
@@ -14,21 +19,22 @@ public static class Console
     [ConsoleCommand("")]
     public static string YarCraftCleanID()
     {
-        List<string> message = new List<string>(completeMessage);
-        List<string> ids = new List<string>();
+        var message = new List<string>(CompleteMessage);
 
-        var packages = EClass.game.cards.listPackage;
-        foreach (var thing in packages)
-        {
-            var id = thing.id;
-            var uid = thing.uid;
-            var text = $"id:{id}, uid:{uid}";
-            ids.Add(text);
-            Plugin.Logger.LogDebug(text);
-        }
+        // 全カードを走査(たぶん)
+        var result = Walker.WalkAllCard(c => (c.id, IdReplacer.Clean(c.id)));
+        result.Sort();
+        // デバッグ用に出力
+        var file = Path.Combine(Plugin.ModDirectory, DebugFile);
+        File.WriteAllText(file, string.Join("\n", result));
 
-        ids.Sort();
-        message.AddRange(ids);
+        // 変更されたものだけを抽出
+        var changed = from r in result where r.before != r.after select r;
+
+        // 表示用に整形
+        var output = from c in changed select $"{c.before} -> {c.after}";
+        message.AddRange(output);
+
         return string.Join("\n", message);
     }
 }
