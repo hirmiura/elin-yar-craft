@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 using ResultPair = (object before, object after);
 
@@ -46,6 +47,7 @@ public static class Walker
         }
         return result;
     }
+
     public static List<ResultPair> Walk(this Card card, WalkArgFunc func)
     {
         Plugin.Logger.LogDebug($"Card id:{card.id}, uid:{card.uid}, {card.Name}");
@@ -53,6 +55,8 @@ public static class Walker
         result.AddRange(card.things.Walk(func));
         return result;
     }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static List<ResultPair> Walk(this IEnumerable<Card> cards, WalkArgFunc func)
     {
         return cards.SelectMany(c => c.Walk(func)).ToList();
