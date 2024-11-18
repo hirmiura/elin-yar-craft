@@ -120,7 +120,7 @@ generate_cn: ## 中国語版csvファイルを生成します
 generate_cn: $(OutputCsvCN)
 
 Yar_Craft_CN/%.csv: Yar_Craft/%.csv
-	$(E_Translate) -i $< -o $@ -t CN_Thing.xlsx
+	$(E_Translate) -i $< -o $@ -t CN_Thing.xlsx -l cn
 
 
 #==============================================================================
