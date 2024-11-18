@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Meta>
   <title>Yar Craft 繁體字版</title>
-  <id>yar_craft_cn</id>
+  <id>yar_craft_zhtw</id>
   <author>Yararezon</author>
   <loadPriority>100</loadPriority>
   <version>0.23.29-0.2.5</version>
