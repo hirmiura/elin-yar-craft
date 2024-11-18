@@ -1,0 +1,123 @@
+[h1]Yar Craft 繁體字版[/h1]
+
+允許製造裝置。
+
+[h2]Elin Data Expanded Framework[/h2]
+
+此 MOD 需要 EDEFW 才能運作。
+訂閱以下內容。
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
+
+[h2]配方[/h2]
+
+低階裝備從一開始就可以學習，但高階（內部 lvl 10 或以上）裝備需要擦出火花。
+
+[h2]遊戲過程中的新增內容[/h2]
+
+沒問題
+
+[h2]從遊戲中期刪除[/h2]
+
+0.2.0 版之後建立的專案沒有問題。
+在此之前建立的專案則有問題。
+這是因為每個專案都有一個與原始專案不同的 ID。
+這樣做是為了將材料與工作臺分開。
+
+具體來說，您所創造的物品會變成垃圾（就像 ELONA 中的金塊）。
+
+[h2]與其他修改器的衝突[/h2]
+
+我只是用自己的 id 添加了專案資料，所以不應該有任何資料。……
+
+[url=https://github.com/hirmiura/elin-yar-craft/issues/2]與《KK With My Sister》一起使用時，會出現無法收回腳的現象。[/url]
+https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
+
+[u][b]將模式載入順序設定為先載入 “KK With My Sister”，就可以解決這個問題。[/b][/u]
+
+[olist]
+[*] KK With My Sister
+[*] Elin Data Expanded Framework
+[/olist]
+
+[h2]可生產的裝備[/h2]
+
+[list]
+[*] 近戰武器
+  [list]
+  [*] axe
+      大斧, 戰斧, 手斧, 機械斧
+  [*] blunt
+      大錘, 棍棒, 錘矛
+  [*] dagger
+      菜刀, 忍刀, 海賊刀, 短劍
+  [*] martial
+      爪, 拳擊手套
+  [*] polearm
+      戟, 三叉戟, 長槍
+  [*] scythe
+      大鐮, 戰鐮
+  [*] shield
+      小盾, 圓盾, 盾, 合成盾, 騎士盾, 塔盾
+  [*] staff
+      長棒, 杖
+  [*] sword
+      大劍, 刀, 長劍, 光劍
+  [/list]
+[*] 裝甲
+  [list]
+  [*] arm
+      輕手套, 厚手套, 合成護手, 多層護手, 重型護手, 高級護手, 大護手
+  [*] back
+      輕外套, 翼, 外套, 陣羽織, 防護外套, 羽
+  [*] foot
+      鞋子, 靴子, 重靴, 厚靴, 合成靴, 裝甲靴, 大靴
+  [*] head
+      桶盔, 頭盔, 羽毛帽, 魔法帽, 騎士盔, 重盔, 妖精帽, 合金盔, 大盔
+  [*] torso
+      法衣, 胸甲, 衣服, 輕鎧, 厚鎧, 防護服, 環甲, 大鎧, 合成鎧, 防彈服, 鏈甲, 法王衣, 重型鎧
+  [*] waist
+      腰帶, 合成腰帶, 重型腰帶
+  [/list]
+[*] 裝飾
+  [list]
+  [*] amulet
+      結婚項鍊, 裝飾項鍊, 項鍊, 精工項鍊, 護身符, 護頸, 護符, 橄欖石項鍊
+  [*] ring
+      結婚戒指, 裝飾戒指, 戒指, 加速戒指, 極光戒指, 防護戒指, 合金戒指
+  [/list]
+[/list]
+
+[h2]變異[/h2]
+
+[list]
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3364027181]Yar Craft[/url] オリジナル
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3365224617]Yar Craft 简体字版[/url]
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=]Yar Craft 繁體字版[/url]
+[/list]
+
+[h2]原始碼[/h2]
+
+https://github.com/hirmiura/elin-yar-craft
+
+[h2]修訂歷史[/h2]
+
+[list]
+[*] 0.2.5
+新增光劍
+[*] 0.2.4
+添加了控制檯命令 “YarCraftCleanID ”以刪除舊 ID。
+[*] 0.2.3
+無法制作配料超過 6 種的食譜，這一問題已得到糾正。
+[*] 0.2.2
+優質品、奇蹟和神器成為可能。
+[*] 0.2.1
+附加裝飾
+[*] 0.2.0
+更改已建立物品的 ID，使其在移除 MOD 時不會消失
+[*] 2024-11-15
+配方已標準化，可根據每種物品的重量和價值的基本值改變所需數量。
+[*] 2024-11-12
+我們已改用指令碼生成。
+舊資料已被儲存，因此向後相容應該不成問題。
+[/list]
