@@ -23,6 +23,7 @@ public static class MyPluginInfo
 public class Plugin : BaseUnityPlugin
 {
     internal static new ManualLogSource Logger;
+    public static string ModDirectory = "";
     public static Regex Rgx { get; private set; }
     public static Regex RgxUnderbar { get; private set; }
     public static string Replacement { get; private set; }
