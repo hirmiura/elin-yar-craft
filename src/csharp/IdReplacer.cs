@@ -7,7 +7,8 @@ namespace YarCraft;
 
 public static class IdReplacer
 {
-    public static Regex FirstMatch = new(@"^YarCraft", RegexOptions.Compiled);
+    public static Regex FirstMatchV1 = new(@"^YarCraft_", RegexOptions.Compiled);
+    public static Regex FirstMatchV2 = new(@"^YarCraft_.+_YarCraft", RegexOptions.Compiled);
     public static Regex[] RuleV1 = [
         new(@"^YarCraft_", RegexOptions.Compiled),
         new(@"_q\d$", RegexOptions.Compiled),
@@ -20,27 +21,28 @@ public static class IdReplacer
 
     public static string Clean(string id)
     {
-        if (!FirstMatch.IsMatch(id)) return id;
+        if (!FirstMatchV1.IsMatch(id)) return id;
 
         var result = id;
         result = CleanV2(result);
-        result = CleanV1(result);
+        if (result == id)
+            result = CleanV1(result);
         return result;
     }
 
     public static string CleanV1(string id)
     {
+        if (!FirstMatchV1.IsMatch(id)) return id;
         return CleanUtil(id, RuleV1);
     }
     public static string CleanV2(string id)
     {
+        if (!FirstMatchV2.IsMatch(id)) return id;
         return CleanUtil(id, RuleV2);
     }
 
     public static string CleanUtil(string id, IReadOnlyList<Regex> rules)
     {
-        if (!FirstMatch.IsMatch(id)) return id;
-
         var result = id;
         foreach (var rule in rules)
         {
