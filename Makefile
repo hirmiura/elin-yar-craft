@@ -20,6 +20,7 @@ E_Document	:= poetry run src/elin_yar_craft/document.py
 #==============================================================================
 include ColorCode.mk
 include Help.mk
+include Check.mk
 
 
 #==============================================================================
@@ -37,17 +38,7 @@ check: check_link check_link_cn check_link_elin
 .PHONY: check_link
 check_link: ## Elin_sourceへのリンク/ディレクトリを確認します
 check_link:
-	@echo -e '$(CC_BrBlue)========== $@ ==========$(CC_Reset)'
-	@echo '"$(D_ElinSrc)" をチェックしています'
-	@if [[ -L $(D_ElinSrc) && `readlink $(D_ElinSrc) ` ]] ; then \
-		echo -e '    $(CC_BrGreen)SUCCESS$(CC_Reset): リンクです' ; \
-	elif [[ -d $(D_ElinSrc) ]] ; then \
-		echo -e '    $(CC_BrGreen)SUCCESS$(CC_Reset): ディレクトリです' ; \
-	else \
-		echo -e '    \a$(CC_BrRed)ERROR: "$(D_ElinSrc)" に "Elin_source/version" へのリンクを張って下さい$(CC_Reset)' ; \
-		echo -e '    $(CC_BrRed)例: ln -s "/mnt/c/Elin_source/EA 23.23 fix 1" $(D_ElinSrc)$(CC_Reset)' ; \
-		exit 1 ; \
-	fi
+	$(call check.linkordir,$(D_ElinSrc),Elin_source/version,/mnt/c/Elin_source/EA 23.23 fix 1)
 
 
 #==============================================================================
@@ -56,17 +47,7 @@ check_link:
 .PHONY: check_link_cn
 check_link_cn: ## Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsxへのリンク/ディレクトリを確認します
 check_link_cn:
-	@echo -e '$(CC_BrBlue)========== $@ ==========$(CC_Reset)'
-	@echo '"$(F_CN_Thing)" をチェックしています'
-	@if [[ -L $(F_CN_Thing) && `readlink $(F_CN_Thing) ` ]] ; then \
-		echo -e '    $(CC_BrGreen)SUCCESS$(CC_Reset): リンクです' ; \
-	elif [[ -d $(F_CN_Thing) ]] ; then \
-		echo -e '    $(CC_BrGreen)SUCCESS$(CC_Reset): ディレクトリです' ; \
-	else \
-		echo -e '    \a$(CC_BrRed)ERROR: "$(F_CN_Thing)" に "Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsx" へのリンクを張って下さい$(CC_Reset)' ; \
-		echo -e '    $(CC_BrRed)例: ln -s "/mnt/c/SteamLibrary/steamapps/common/Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsx" $(F_CN_Thing)$(CC_Reset)' ; \
-		exit 1 ; \
-	fi
+	$(call check.linkordir,$(F_CN_Thing),Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsx,/mnt/c/SteamLibrary/steamapps/common/Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsx)
 
 
 #==============================================================================
@@ -75,17 +56,7 @@ check_link_cn:
 .PHONY: check_link_elin
 check_link_elin: ## Elinへのリンク/ディレクトリを確認します
 check_link_elin:
-	@echo -e '$(CC_BrBlue)========== $@ ==========$(CC_Reset)'
-	@echo '"$(D_ElinHome)" をチェックしています'
-	@if [[ -L $(D_ElinHome) && `readlink $(D_ElinHome) ` ]] ; then \
-		echo -e '    $(CC_BrGreen)SUCCESS$(CC_Reset): リンクです' ; \
-	elif [[ -d $(D_ElinHome) ]] ; then \
-		echo -e '    $(CC_BrGreen)SUCCESS$(CC_Reset): ディレクトリです' ; \
-	else \
-		echo -e '    \a$(CC_BrRed)ERROR: "$(D_ElinHome)" に "Elin" へのリンクを張って下さい$(CC_Reset)' ; \
-		echo -e '    $(CC_BrRed)例: ln -s "/mnt/c/SteamLibrary/steamapps/common/Elin" $(D_ElinHome)$(CC_Reset)' ; \
-		exit 1 ; \
-	fi
+	$(call check.linkordir,$(D_ElinHome),Elin,/mnt/c/SteamLibrary/steamapps/common/Elin)
 
 
 #==============================================================================
