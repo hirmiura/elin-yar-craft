@@ -4,9 +4,10 @@
 SHELL := /bin/bash
 
 # 各種ディレクトリ/ファイル
-D_ElinSrc	:= ElinSrc
-F_CN_Thing	:= CN_Thing.xlsx
-D_ElinHome	:= ElinHome
+D_ElinSrc		:= ElinSrc
+F_CN_Thing		:= CN_Thing.xlsx
+F_ZHTW_Thing	:= ZHTW_Thing.xlsx
+D_ElinHome		:= ElinHome
 # 実行ファイル
 E_YarCraft	:= poetry run src/elin_yar_craft/yarcraft.py
 E_UpdateDep	:= poetry run src/elin_yar_craft/update_deprecated.py
@@ -28,7 +29,7 @@ include Check.mk
 #==============================================================================
 .PHONY: check
 check: ## 事前にチェック項目を確認します
-check: check_link check_link_cn check_link_elin
+check: check_link check_link_cn check_link_zhtw check_link_elin
 
 
 #==============================================================================
@@ -48,6 +49,15 @@ check_link:
 check_link_cn: ## Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsxへのリンク/ディレクトリを確認します
 check_link_cn:
 	$(call check.linkordir,$(F_CN_Thing),Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsx,/mnt/c/SteamLibrary/steamapps/common/Elin/Package/_Lang_Chinese/Lang/CN/Game/Thing.xlsx)
+
+
+#==============================================================================
+# workshop/content/2135150/3358773542/Lang/ZHTW/Game/Thing.xlsx へのリンク/ディレクトリを確認
+#==============================================================================
+.PHONY: check_link_zhtw
+check_link_zhtw: ## workshop/content/2135150/3358773542/Lang/ZHTW/Game/Thing.xlsxへのリンク/ディレクトリを確認します
+check_link_zhtw:
+	$(call check.linkordir,$(F_ZHTW_Thing),workshop/content/2135150/3358773542/Lang/ZHTW/Game/Thing.xlsx,/mnt/c/SteamLibrary/steamapps/workshop/content/2135150/3358773542/Lang/ZHTW/Game/Thing.xlsx)
 
 
 #==============================================================================
@@ -83,15 +93,27 @@ update_deprecated: Yar_Craft/EDEFW_Thing_YarCraft_deprecated.csv $(OutputCsv)
 
 
 #==============================================================================
-# 生成(中国語版)
+# 生成(簡体字版)
 #==============================================================================
 .PHONY: generate_cn
 OutputCsvCN := $(patsubst Yar_Craft/%,Yar_Craft_CN/%,$(OutputCsv)) Yar_Craft_CN/EDEFW_Thing_YarCraft_deprecated.csv
-generate_cn: ## 中国語版csvファイルを生成します
+generate_cn: ## 簡体字版csvファイルを生成します
 generate_cn: $(OutputCsvCN)
 
-Yar_Craft_CN/%.csv: Yar_Craft/%.csv
-	$(E_Translate) -i $< -o $@ -t CN_Thing.xlsx -l cn
+Yar_Craft_CN/%.csv: Yar_Craft/%.csv $(F_CN_Thing)
+	$(E_Translate) -i $< -o $@ -t $(F_CN_Thing) -l cn
+
+
+#==============================================================================
+# 生成(繁体字版)
+#==============================================================================
+.PHONY: generate_zhtw
+OutputCsvZHTW := $(patsubst Yar_Craft/%,Yar_Craft_ZHTW/%,$(OutputCsv)) Yar_Craft_ZHTW/EDEFW_Thing_YarCraft_deprecated.csv
+generate_zhtw: ## 繁体字版csvファイルを生成します
+generate_zhtw: $(OutputCsvZHTW)
+
+Yar_Craft_ZHTW/%.csv: Yar_Craft/%.csv $(F_ZHTW_Thing)
+	$(E_Translate) -i $< -o $@ -t $(F_ZHTW_Thing) -l zhtw
 
 
 #==============================================================================
@@ -106,6 +128,7 @@ update_version:
 	sed -i -r "s|(PLUGIN_VERSION\s*=\s*\")(.+)(\";)|\1$(ver)\3|g" src/csharp/Plugin.cs
 	sed -i -r "s|(<version>).*(</version>)|\1$(verElin)-$(ver)\2|g" Yar_Craft/package.xml
 	sed -i -r "s|(<version>).*(</version>)|\1$(verElin)-$(ver)\2|g" Yar_Craft_CN/package.xml
+	sed -i -r "s|(<version>).*(</version>)|\1$(verElin)-$(ver)\2|g" Yar_Craft_ZHTW/package.xml
 
 
 #==============================================================================
@@ -117,6 +140,7 @@ dll: update_version
 	dotnet build -c Release
 	cp -f src/csharp/bin/Release/YarCraft.dll Yar_Craft
 	cp -f src/csharp/bin/Release/YarCraft.dll Yar_Craft_CN
+	cp -f src/csharp/bin/Release/YarCraft.dll Yar_Craft_ZHTW
 
 
 #==============================================================================
@@ -128,6 +152,7 @@ docs:
 	$(E_Document)
 	xq-python -ix --xml-dtd ".Meta.description|=\"$$(< docs/workshop_desc.txt)\"" Yar_Craft/package.xml
 	xq-python -ix --xml-dtd ".Meta.description|=\"$$(< docs/workshop_desc_cn.txt)\"" Yar_Craft_CN/package.xml
+	xq-python -ix --xml-dtd ".Meta.description|=\"$$(< docs/workshop_desc_zhtw.txt)\"" Yar_Craft_ZHTW/package.xml
 
 
 #==============================================================================
@@ -135,7 +160,7 @@ docs:
 #==============================================================================
 .PHONY: build
 build: ## ビルドします
-build: generate generate_cn docs dll
+build: generate generate_cn generate_zhtw docs dll
 
 
 #==============================================================================
@@ -149,13 +174,16 @@ all: check build
 #==============================================================================
 # クリーンアップ
 #==============================================================================
-.PHONY: clean clean-cn clean-docs clean-dll clean-all
+.PHONY: clean clean-cn clean-zhtw clean-docs clean-dll clean-all
 clean: ## クリーンアップします
-clean: clean-cn clean-docs clean-dll
+clean: clean-cn clean-zhtw clean-docs clean-dll
 	rm -f Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
 
 clean-cn:
 	rm -f Yar_Craft_CN/*.csv
+
+clean-zhtw:
+	rm -f Yar_Craft_ZHTW/*.csv
 
 clean-docs:
 	rm -f docs/workshop_desc*.txt

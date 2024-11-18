@@ -42,7 +42,7 @@ def procee_args() -> argparse.Namespace:
     parser.add_argument(
         "-t", metavar="TRANS", dest="trans", required=True, help="翻訳に使うThing.xlsxファイル"
     )
-    lang_choices = ["cn"]
+    lang_choices = ["cn", "zhtw"]
     parser.add_argument(
         "-l", metavar="LANG", dest="lang", required=True, choices=lang_choices, help="対象の言語"
     )
@@ -120,17 +120,23 @@ def get_key_name(lang: str, id: str, name: str) -> str:
             match lang:
                 case "cn":
                     new_name += "优质品"
+                case "zhtw":
+                    new_name += "優質品"
                 case _:
                     new_name += "good"
         case "_q2":
             match lang:
                 case "cn":
                     new_name += "奇迹"
+                case "zhtw":
+                    new_name += "奇蹟"
                 case _:
                     new_name += "miracle"
         case "_q3":
             match lang:
                 case "cn":
+                    new_name += "神器"
+                case "zhtw":
                     new_name += "神器"
                 case _:
                     new_name += "godly"
@@ -138,6 +144,8 @@ def get_key_name(lang: str, id: str, name: str) -> str:
             match lang:
                 case "cn":
                     new_name += "特制"
+                case "zhtw":
+                    new_name += "特製"
                 case _:
                     new_name += "special"
     return new_name

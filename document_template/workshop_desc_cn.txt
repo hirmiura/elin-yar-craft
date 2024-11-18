@@ -1,4 +1,4 @@
-[h1]Yar Craft 中文版[/h1]
+[h1]Yar Craft 简体字版[/h1]
 
 允许制造设备。
 
@@ -47,8 +47,9 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 [h2]变异[/h2]
 
 [list]
-[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3364027181]Yar Craft[/url] 原著
-[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3365224617]Yar Craft 中文版[/url]
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3364027181]Yar Craft[/url] オリジナル
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3365224617]Yar Craft 简体字版[/url]
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3368253135]Yar Craft 繁體字版[/url]
 [/list]
 
 [h2]原始码[/h2]
