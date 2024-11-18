@@ -80,6 +80,15 @@ def craftable_list(dir: str) -> None:
 
 
 def get_name_dict(path: Path, need_jp: bool = False) -> tuple[NameDictType, NameDictType | None]:
+    """csvファイルを読み込んでカテゴリ毎に分けられたnameの辞書を返す
+
+    Args:
+        path (Path): csvファイル
+        need_jp (bool, optional): 日本語版も読み込むか? Defaults to False.
+
+    Returns:
+        tuple[NameDictType, NameDictType | None]: nameの辞書とname_JPの辞書のタプル
+    """
     with path.open() as f:
         reader = csv.DictReader(f)
         data = list(reader)
