@@ -7,7 +7,7 @@ using System.Linq;
 using ResultPair = (object before, object after);
 
 namespace YarCraft;
-using WalkArgFunc = Func<Card, List<ResultPair>>;
+using WalkArgFunc = Func<Card, ResultPair>;
 
 public static class Walker
 {
@@ -49,7 +49,7 @@ public static class Walker
     public static List<ResultPair> Walk(this Card card, WalkArgFunc func)
     {
         Plugin.Logger.LogDebug($"Card id:{card.id}, uid:{card.uid}, {card.Name}");
-        var result = func is null ? [] : func(card);
+        List<ResultPair> result = func is null ? [] : [func(card)];
         result.AddRange(card.things.Walk(func));
         return result;
     }
