@@ -130,39 +130,33 @@ def gen_craftable_list(
     accessory_dict: dict[str, list[str]],
 ) -> str:
     lines: list[str] = ["[list]"]
-    lines.append(f"[*] {weapon_title}")
-    last = len(weapon_dict) - 1
-    for i, (k, v) in enumerate(weapon_dict.items()):
-        if i == 0:
-            lines.append("  [list]")
-        lines.append(f"  [*] {k}")
-        items = ", ".join(v)
-        lines.append(f"{' '*6}{items}")
-        if i == last:
-            lines.append("  [/list]")
-    lines.append(f"[*] {armor_title}")
-    last = len(armor_dict) - 1
-    for i, (k, v) in enumerate(armor_dict.items()):
-        if i == 0:
-            lines.append("  [list]")
-        lines.append(f"  [*] {k}")
-        items = ", ".join(v)
-        lines.append(f"{' '*6}{items}")
-        if i == last:
-            lines.append("  [/list]")
-    lines.append(f"[*] {accessory_title}")
-    last = len(accessory_dict) - 1
-    for i, (k, v) in enumerate(accessory_dict.items()):
-        if i == 0:
-            lines.append("  [list]")
-        lines.append(f"  [*] {k}")
-        items = ", ".join(v)
-        lines.append(f"{' '*6}{items}")
-        if i == last:
-            lines.append("  [/list]")
-    lines.append("[/list]")
+    for title, dic in zip(
+        [weapon_title, armor_title, accessory_title], [weapon_dict, armor_dict, accessory_dict]
+    ):
+        lines.append(f"[*] {title}")
+        lines.extend(gen_item_list(dic))
+    lines.append("[/list]")  # 終了タグ
 
     return "\r\n".join(lines)
+
+
+def gen_item_list(items: dict) -> list[str]:
+    assert items
+    spacer = [f"{' '*2}", f"{' '*6}"]
+    lines: list[str] = []
+    last = len(items) - 1
+    for i, (k, v) in enumerate(items.items()):
+        if i == 0:
+            lines.append(f"{spacer[0]}[list]")  # 開始タグ
+
+        lines.append(f"{spacer[0]}[*] {k}")
+        item_line = ", ".join(v)
+        lines.append(f"{spacer[1]}{item_line}")
+
+        if i == last:
+            lines.append(f"{spacer[0]}[/list]")  # 終了タグ
+
+    return lines
 
 
 def gen_workshop_desc(craftable: str, template: Path, output: Path) -> None:
