@@ -62,7 +62,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
   [*] staff
       long staff, staff
   [*] sword
-      claymore, katana, long sword
+      claymore, katana, long sword, lightsaber
   [/list]
 [*] Armor
   [list]
@@ -102,6 +102,8 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]Changelog[/h2]
 
 [list]
+[*] 0.2.5
+Lightsabers added.
 [*] 0.2.4
 Added console command “YarCraftCleanID” to remove old id.
 [*] 0.2.3

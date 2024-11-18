@@ -62,7 +62,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
   [*] staff
       长棒, 杖
   [*] sword
-      大剑, 刀, 长剑
+      大剑, 刀, 长剑, 光剑
   [/list]
 [*] 裝甲
   [list]
@@ -102,6 +102,8 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]修订历史[/h2]
 
 [list]
+[*] 0.2.5
+新增光剑
 [*] 0.2.4
 添加了控制台命令 “YarCraftCleanID ”以删除旧 ID。
 [*] 0.2.3
