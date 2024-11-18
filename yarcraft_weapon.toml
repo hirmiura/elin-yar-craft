@@ -19,6 +19,11 @@ tag       = "{line['tag'] + ',noDrop,noShop' if line['tag'] else 'noDrop,noShop'
 [normal]
 recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},resin/{int(w/1000+1)},string/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)}"
 
+[lightsaber]
+filter.id         = "lightsaber"
+filter.naming     = ""
+recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},resin/{int(w/1000+1)},gem/2,money/{int((v:=int(line['value']))/100+1)}"
+
 ##### 個別設定 - 高品質 #####
 [q1]
 recipe.name_JP    = "{line['name_JP']} 高品質"
@@ -28,6 +33,17 @@ recipe.LV         = "{int(line['LV'])+10}"
 recipe.recipeKey  = ""
 recipe.quality    = "1"
 recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},resin/{int(w/1000+1)},string/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)},plat/1"
+
+["lightsaber q1"]
+filter.id         = "lightsaber"
+filter.naming     = ""
+recipe.name_JP    = "{line['name_JP']} 高品質"
+recipe.name       = "{line['name']} good quality"
+recipe.id.suffix  = [ "wood_q1", "stone_q1", "metal_q1", "cloth_q1" ]
+recipe.LV         = "{int(line['LV'])+10}"
+recipe.recipeKey  = ""
+recipe.quality    = "1"
+recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},resin/{int(w/1000+1)},gem/2,money/{int((v:=int(line['value']))/100+1)},plat/1"
 
 ##### 個別設定 - 奇跡 #####
 [q2]
@@ -39,6 +55,17 @@ recipe.recipeKey  = ""
 recipe.quality    = "2"
 recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},resin/{int(w/1000+1)},string/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)},plat/5"
 
+["lightsaber q2"]
+filter.id         = "lightsaber"
+filter.naming     = ""
+recipe.name_JP    = "{line['name_JP']} 奇跡"
+recipe.name       = "{line['name']} miracle quality"
+recipe.id.suffix  = [ "wood_q2", "stone_q2", "metal_q2", "cloth_q2" ]
+recipe.LV         = "{int(line['LV'])+10}"
+recipe.recipeKey  = ""
+recipe.quality    = "1"
+recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},resin/{int(w/1000+1)},gem/2,money/{int((v:=int(line['value']))/100+1)},plat/5"
+
 ##### 個別設定 - 神器 #####
 [q3]
 recipe.name_JP    = "{line['name_JP']} 神器"
@@ -48,3 +75,14 @@ recipe.LV         = "{int(line['LV'])+50}"
 recipe.recipeKey  = ""
 recipe.quality    = "3"
 recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},resin/{int(w/1000+1)},string/{int(w/2000+1)},money/{int((v:=int(line['value']))/100+1)},plat/10"
+
+["lightsaber q3"]
+filter.id         = "lightsaber"
+filter.naming     = ""
+recipe.name_JP    = "{line['name_JP']} 神器"
+recipe.name       = "{line['name']} godly quality"
+recipe.id.suffix  = [ "wood_q3", "stone_q3", "metal_q3", "cloth_q3" ]
+recipe.LV         = "{int(line['LV'])+10}"
+recipe.recipeKey  = ""
+recipe.quality    = "1"
+recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},resin/{int(w/1000+1)},gem/2,money/{int((v:=int(line['value']))/100+1)},plat/10"

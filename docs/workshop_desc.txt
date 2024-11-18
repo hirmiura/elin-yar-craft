@@ -62,7 +62,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
   [*] staff
       長棒, 杖
   [*] sword
-      大剣, 刀, 長剣
+      大剣, 刀, 長剣, ライトセーバー
   [/list]
 [*] 防具
   [list]
@@ -102,6 +102,8 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]変更履歴[/h2]
 
 [list]
+[*] 0.2.5
+ライトセーバーを追加した
 [*] 0.2.4
 旧idを削除するためのコンソールコマンド「YarCraftCleanID」を追加した
 [*] 0.2.3
