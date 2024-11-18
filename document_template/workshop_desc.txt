@@ -58,6 +58,8 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]変更履歴[/h2]
 
 [list]
+[*] 0.2.4
+旧idを削除するためのコンソールコマンド「YarCraftCleanID」を追加した
 [*] 0.2.3
 材料が6種以上あるレシピが製作できなかったので修正した
 [*] 0.2.2
