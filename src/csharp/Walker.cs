@@ -39,6 +39,8 @@ public static class Walker
         {
             Plugin.Logger.LogDebug($"Zone id:{zone.id}, uid:{zone.uid}");
             if (zone.map is null) continue;
+            result.AddRange(zone.map.things.Walk(func));
+            result.AddRange(zone.map.charas.Walk(func));
             foreach (var cell in zone.map.cells)
             {
                 result.AddRange(cell.Things.Walk(func));
