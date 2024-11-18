@@ -48,7 +48,8 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
 
 [list]
 [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3364027181]Yar Craft[/url] Original
-[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3365224617]Yar Craft 中文版[/url]
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3365224617]Yar Craft Simplified Chinese[/url]
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=]Yar Craft Traditinal Chinese[/url]
 [/list]
 
 [h2]Source[/h2]

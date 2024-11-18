@@ -1,0 +1,79 @@
+[h1]Yar Craft 繁體字版[/h1]
+
+允許製造裝置。
+
+[h2]Elin Data Expanded Framework[/h2]
+
+此 MOD 需要 EDEFW 才能運作。
+訂閱以下內容。
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=3363033460
+
+[h2]配方[/h2]
+
+低階裝備從一開始就可以學習，但高階（內部 lvl 10 或以上）裝備需要擦出火花。
+
+[h2]遊戲過程中的新增內容[/h2]
+
+沒問題
+
+[h2]從遊戲中期刪除[/h2]
+
+0.2.0 版之後建立的專案沒有問題。
+在此之前建立的專案則有問題。
+這是因為每個專案都有一個與原始專案不同的 ID。
+這樣做是為了將材料與工作臺分開。
+
+具體來說，您所創造的物品會變成垃圾（就像 ELONA 中的金塊）。
+
+[h2]與其他修改器的衝突[/h2]
+
+我只是用自己的 id 添加了專案資料，所以不應該有任何資料。……
+
+[url=https://github.com/hirmiura/elin-yar-craft/issues/2]與《KK With My Sister》一起使用時，會出現無法收回腳的現象。[/url]
+https://steamcommunity.com/sharedfiles/filedetails/?id=3358081949
+
+[u][b]將模式載入順序設定為先載入 “KK With My Sister”，就可以解決這個問題。[/b][/u]
+
+[olist]
+[*] KK With My Sister
+[*] Elin Data Expanded Framework
+[/olist]
+
+[h2]可生產的裝備[/h2]
+
+{CraftableList}
+
+[h2]變異[/h2]
+
+[list]
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3364027181]Yar Craft[/url] オリジナル
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3365224617]Yar Craft 简体字版[/url]
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=]Yar Craft 繁體字版[/url]
+[/list]
+
+[h2]原始碼[/h2]
+
+https://github.com/hirmiura/elin-yar-craft
+
+[h2]修訂歷史[/h2]
+
+[list]
+[*] 0.2.5
+新增光劍
+[*] 0.2.4
+添加了控制檯命令 “YarCraftCleanID ”以刪除舊 ID。
+[*] 0.2.3
+無法制作配料超過 6 種的食譜，這一問題已得到糾正。
+[*] 0.2.2
+優質品、奇蹟和神器成為可能。
+[*] 0.2.1
+附加裝飾
+[*] 0.2.0
+更改已建立物品的 ID，使其在移除 MOD 時不會消失
+[*] 2024-11-15
+配方已標準化，可根據每種物品的重量和價值的基本值改變所需數量。
+[*] 2024-11-12
+我們已改用指令碼生成。
+舊資料已被儲存，因此向後相容應該不成問題。
+[/list]
