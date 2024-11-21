@@ -59,6 +59,8 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]Changelog[/h2]
 
 [list]
+[*] 0.2.7
+Fix name of miracle and godly quality of accessories.
 [*] 0.2.6
 Fix setting of Lightsabers.
 [*] 0.2.5
