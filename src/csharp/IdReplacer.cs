@@ -12,7 +12,7 @@ public static class IdReplacer
     public static Regex[] RuleV1 = [
         new(@"^YarCraft_", RegexOptions.Compiled),
         new(@"_q\d$", RegexOptions.Compiled),
-        new(@"_(wood|stone|metal|cloth)?$", RegexOptions.Compiled),
+        new(@"_(wood|stone|metal|cloth|glass)?$", RegexOptions.Compiled),
     ];
     public static Regex[] RuleV2 = [
         new(@"^YarCraft_", RegexOptions.Compiled),

@@ -7,11 +7,11 @@ quality  = "0"
 
 [DEFAULT.recipe]
 id.prefix = "YarCraft"
-id.suffix = [ "wood", "stone", "metal", "cloth" ]
-variant   = [ "log", "rock", "ingot", "texture" ]
-factory   = [ "factory_wood", "factory_stone", "factory_metal", "loom" ]
-defMat    = [ "oak", "granite", "iron", "cotton" ]
-tierGroup = [ "metal", "metal", "metal", "leather" ]
+id.suffix = [ "wood", "stone", "metal", "cloth", "glass" ]
+variant   = [ "log", "rock", "ingot", "texture", "glass" ]
+factory   = [ "factory_wood", "factory_stone", "factory_metal", "loom", "factory_glass" ]
+defMat    = [ "oak", "granite", "iron", "cotton", "glass" ]
+tierGroup = [ "metal", "metal", "metal", "leather", "metal" ]
 recipeKey = "{'*' if int(line['LV']) <= 10 else ''}"
 tag       = "{line['tag'] + ',noDrop,noShop' if line['tag'] else 'noDrop,noShop'}"
 
@@ -23,7 +23,7 @@ recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},texture/{in
 [q1]
 recipe.name_JP    = "{line['name_JP']} 高品質"
 recipe.name       = "{line['name']} good quality"
-recipe.id.suffix  = [ "wood_q1", "stone_q1", "metal_q1", "cloth_q1" ]
+recipe.id.suffix  = [ "wood_q1", "stone_q1", "metal_q1", "cloth_q1", "glass_q1" ]
 recipe.LV         = "{int(line['LV'])+10}"
 recipe.recipeKey  = ""
 recipe.quality    = "1"
@@ -33,7 +33,7 @@ recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},texture/{in
 [q2]
 recipe.name_JP    = "{line['name_JP']} 奇跡"
 recipe.name       = "{line['name']} miracle quality"
-recipe.id.suffix  = [ "wood_q2", "stone_q2", "metal_q2", "cloth_q2" ]
+recipe.id.suffix  = [ "wood_q2", "stone_q2", "metal_q2", "cloth_q2", "glass_q2" ]
 recipe.LV         = "{int(line['LV'])+30}"
 recipe.recipeKey  = ""
 recipe.quality    = "2"
@@ -43,7 +43,7 @@ recipe.components = "{variant}/{int((w:=int(line['weight']))/500+1)},texture/{in
 [q3]
 recipe.name_JP    = "{line['name_JP']} 神器"
 recipe.name       = "{line['name']} godly quality"
-recipe.id.suffix  = [ "wood_q3", "stone_q3", "metal_q3", "cloth_q3" ]
+recipe.id.suffix  = [ "wood_q3", "stone_q3", "metal_q3", "cloth_q3", "glass_q3" ]
 recipe.LV         = "{int(line['LV'])+50}"
 recipe.recipeKey  = ""
 recipe.quality    = "3"
