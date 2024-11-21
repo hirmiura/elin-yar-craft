@@ -87,7 +87,7 @@ class TransThing(BaseModel):
             trans_id: str = trans[TransThing.key_id]
             line_id: str = line[TransThing.key_id]
             pure_line_id = re.sub(r"^YarCraft_", "", line_id)
-            pure_line_id = re.sub(r"_(wood|stone|metal|cloth)?(_q\d)?$", "", pure_line_id)
+            pure_line_id = re.sub(r"_(wood|stone|metal|cloth|glass)?(_q\d)?$", "", pure_line_id)
             if (  # idが一致するか
                 trans_id.casefold() == pure_line_id.casefold()
             ):
