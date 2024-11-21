@@ -4,7 +4,7 @@
   <id>yar_craft_cn</id>
   <author>Yararezon</author>
   <loadPriority>100</loadPriority>
-  <version>0.23.29-0.2.6</version>
+  <version>0.23.29-0.2.7</version>
   <description>[h1]Yar Craft 简体字版[/h1]
 
 允许制造设备。
@@ -110,6 +110,8 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]修订历史[/h2]
 
 [list]
+[*] 0.2.7
+附件中奇迹和神器的英文名称有误，现已更正。
 [*] 0.2.6
 修复光剑的设置
 [*] 0.2.5
