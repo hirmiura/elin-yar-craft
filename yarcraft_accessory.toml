@@ -48,7 +48,7 @@ recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|t
 ##### 個別設定 - 奇跡 #####
 ["normal q2"]
 recipe.name_JP    = "{line['name_JP']} 奇跡"
-recipe.name       = "{line['name']} good quality"
+recipe.name       = "{line['name']} miracle quality"
 recipe.id.suffix  = "_q2"
 recipe.LV         = "{int(line['LV'])+30}"
 recipe.recipeKey  = ""
@@ -59,7 +59,7 @@ recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|t
 filter.id         = "^ring_(speed|aurora)$"
 filter.naming     = ""
 recipe.name_JP    = "{line['name_JP']} 奇跡"
-recipe.name       = "{line['name']} good quality"
+recipe.name       = "{line['name']} miracle quality"
 recipe.id.suffix  = "_q2"
 recipe.LV         = "{int(line['LV'])+30}"
 recipe.recipeKey  = ""
@@ -69,7 +69,7 @@ recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|t
 ##### 個別設定 - 神器 #####
 ["normal q3"]
 recipe.name_JP    = "{line['name_JP']} 神器"
-recipe.name       = "{line['name']} good quality"
+recipe.name       = "{line['name']} godly quality"
 recipe.id.suffix  = "_q3"
 recipe.LV         = "{int(line['LV'])+50}"
 recipe.recipeKey  = ""
@@ -80,7 +80,7 @@ recipe.components = "plank/{int((w:=int(line['weight']))/50+1)}|cutstone|ingot|t
 filter.id         = "^ring_(speed|aurora)$"
 filter.naming     = ""
 recipe.name_JP    = "{line['name_JP']} 神器"
-recipe.name       = "{line['name']} good quality"
+recipe.name       = "{line['name']} godly quality"
 recipe.id.suffix  = "_q3"
 recipe.LV         = "{int(line['LV'])+50}"
 recipe.recipeKey  = ""
