@@ -13,6 +13,7 @@ factory   = [ "factory_wood", "factory_stone", "factory_metal", "loom", "factory
 defMat    = [ "oak", "granite", "iron", "cotton", "glass" ]
 tierGroup = [ "metal", "metal", "metal", "leather", "metal" ]
 recipeKey = "{'*' if int(line['LV']) <= 10 else ''}"
+chance    = "0"
 tag       = "{line['tag'] + ',noDrop,noShop' if line['tag'] else 'noDrop,noShop'}"
 
 ##### 個別設定 - 通常品 #####

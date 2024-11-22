@@ -13,6 +13,7 @@ factory   = "factory_accessory"
 defMat    = "gold"
 tierGroup = "metal"
 recipeKey = "{'*' if int(line['LV']) <= 10 else ''}"
+chance    = "0"
 tag       = "{line['tag'] + ',noDrop,noShop' if line['tag'] else 'noDrop,noShop'}"
 
 ##### 個別設定 - 通常品 #####

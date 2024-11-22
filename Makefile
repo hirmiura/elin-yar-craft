@@ -172,12 +172,23 @@ all: check build
 
 
 #==============================================================================
+# 成果物をコピーして環境に配置する
+#==============================================================================
+.PHONY: deploy
+deploy: ## 成果物をコピーして環境に配置します
+deploy:
+	cp -R Yar_Craft      $(D_ElinHome)/Package/
+	cp -R Yar_Craft_CN   $(D_ElinHome)/Package/
+	cp -R Yar_Craft_ZHTW $(D_ElinHome)/Package/
+
+
+#==============================================================================
 # クリーンアップ
 #==============================================================================
 .PHONY: clean clean-cn clean-zhtw clean-docs clean-dll clean-all
 clean: ## クリーンアップします
 clean: clean-cn clean-zhtw clean-docs clean-dll
-	rm -f Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv
+	rm -f Yar_Craft/EDEFW_Thing_YarCraft_Weapon.csv Yar_Craft/EDEFW_Thing_YarCraft_Armor.csv Yar_Craft/EDEFW_Thing_YarCraft_Accessory.csv
 
 clean-cn:
 	rm -f Yar_Craft_CN/*.csv

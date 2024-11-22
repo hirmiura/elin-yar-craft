@@ -101,13 +101,13 @@ class TransThing(BaseModel):
                 ]:
                     new[key] = trans[key]
                     if key == TransThing.key_name:
-                        new[key] = get_key_name(lang, new[TransThing.key_id], new[key])
+                        new[key] = gen_key_name(lang, new[TransThing.key_id], new[key])
 
                 return new
         return None
 
 
-def get_key_name(lang: str, id: str, name: str) -> str:
+def gen_key_name(lang: str, id: str, name: str) -> str:
     # 末尾が _q\d か?
     suffix_match = re.search(r"(_q\d)$", id)
     if not suffix_match:

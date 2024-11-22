@@ -103,6 +103,8 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]Changelog[/h2]
 
 [list]
+[*] 0.2.9
+Set chance to 0.
 [*] 0.2.8
 Added glassmaker's table recipes and glass to accessory table.
 [*] 0.2.7
