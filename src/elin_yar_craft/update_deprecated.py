@@ -60,10 +60,9 @@ def main() -> int:
             d["recipeKey"] = ""
             d["factory"] = ""
             new_list.append(d)
-            tag = "____"
         else:
             tag = "重複"
-        print(f"{tag}: {id}", file=sys.stderr)
+            print(f"{tag}: {id}", file=sys.stderr)
 
     # 書き出し
     with open(args.target, "w") as f:
