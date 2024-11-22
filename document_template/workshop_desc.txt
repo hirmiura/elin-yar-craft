@@ -59,6 +59,8 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]変更履歴[/h2]
 
 [list]
+[*] 0.2.9
+生成チャンスを0に設定した
 [*] 0.2.8
 ガラスクラフトを追加した
 [*] 0.2.7

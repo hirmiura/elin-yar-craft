@@ -59,6 +59,8 @@ https://github.com/hirmiura/elin-yar-craft
 [h2]修订历史[/h2]
 
 [list]
+[*] 0.2.9
+将几率设为 0
 [*] 0.2.8
 将玻璃制造商的桌子配方和玻璃添加到配件桌上。
 [*] 0.2.7
